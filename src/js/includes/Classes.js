@@ -6,7 +6,6 @@ class Milchproduktion {
     id;
     timeId;
     klasse;
-
     constructor(number, mps, cost, name,id,timeId,klasse) {
         this.number = number;
         this.mps = mps;
@@ -29,7 +28,6 @@ class Milchproduktion {
             totalMps+=this.mps;
             document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+this.cost;
 
-
         }
     }
 }
@@ -37,22 +35,17 @@ class Achievements{
     milestone;
     id;
     achieved;
-    stat;
     klasse;
-    constructor(milestone,id,achieved,stat,klasse) {
+    constructor(milestone,id,achieved,klasse) {
         this.milestone=milestone;
         this.id=id;
         this.achieved=false;
-        this.stat=stat;
         this.klasse="Achievements"
     }
-    checkStone(){
-        console.log("test");
-        console.log(this.stat)
-        console.log(this.milestone);
-    if(this.stat>=this.milestone){
+    checkStone(x){
+    if(x>=this.milestone){
         this.achieved=true;
+        }
     }
 }
 
-}

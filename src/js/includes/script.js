@@ -4,14 +4,19 @@ function addMilk(x) {
     if(milk>1000){
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
-    checkAllAchieve();
+    checkMilkAchieve();
 }
-
-function checkAllAchieve(){
-    let entries = Object.entries(achievments);
-    for(let i=0;i < entries.length;i++){
-      console.log(eval('achievments.' + entries[i][0] + ".achieved"));
+function checkMilkAchieve(){
+    for(let i=0;i < milkAchieve.length;i++){
+        milkAchieve[i].checkStone(milk);
     }
+}
+function checkProductionAvievements(){
+    for(let i=0;i < productionAchieve.length;i++){
+        zehnBauern.checkStone(bauer.number);
+        fuenfHoefe.checkStone(bauernhof.number);
+    }
+
 }
 
 

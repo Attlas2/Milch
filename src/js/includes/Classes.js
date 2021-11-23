@@ -27,6 +27,7 @@ class Milchproduktion {
             this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
             this.cost+=this.number;
             totalMps+=this.mps;
+            document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
             document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+this.cost;
 
 
@@ -39,17 +40,14 @@ class Achievements{
     achieved;
     stat;
     klasse;
-    constructor(milestone,id,achieved,stat,klasse) {
+    constructor(milestone,id,stat,achieved,klasse) {
         this.milestone=milestone;
         this.id=id;
-        this.achieved=false;
         this.stat=stat;
+        this.achieved=false;
         this.klasse="Achievements"
     }
     checkStone(){
-        console.log("test");
-        console.log(this.stat)
-        console.log(this.milestone);
     if(this.stat>=this.milestone){
         this.achieved=true;
     }

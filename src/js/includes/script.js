@@ -8,10 +8,8 @@ function addMilk(x) {
 }
 
 function checkAllAchieve(){
-    let entries = Object.entries(achievments);
-    for(let i=0;i < entries.length;i++){
-      console.log(eval('achievments.' + entries[i][0] + ".achieved"));
-    }
+    einKMilch.checkStone();
+    zweiKMilch.checkStone();
 }
 
 

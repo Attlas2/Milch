@@ -4,12 +4,13 @@ function addMilk(x) {
     if(milk>1000){
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
-    checkAllAchieve();
+    checkMilkAchieve();
 }
 
-function checkAllAchieve(){
-    einKMilch.checkStone();
-    zweiKMilch.checkStone();
+function checkMilkAchieve(){
+    for (let i =0;i<milkAchieve.length;i++){
+        milkAchieve[i].checkStone(milk);
+    }
 }
 
 

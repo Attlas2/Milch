@@ -3,13 +3,17 @@ class Milchproduktion {
     number;
     mps;
     cost;
+    costMulti;
     id;
     timeId;
     klasse;
-    constructor(number, mps, cost, name,id,timeId,klasse) {
+
+
+    constructor(number, mps, cost,costMulti, name,id,timeId,klasse) {
         this.number = number;
         this.mps = mps;
         this.cost = cost;
+        this.costMulti=costMulti;
         this.name =name;
         this.id =id;
         this.timeId=timeId;
@@ -24,9 +28,10 @@ class Milchproduktion {
             }
             this.number++;
             this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
-            this.cost+=this.number;
+            this.cost*=this.costMulti;
             totalMps+=this.mps;
-            document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+this.cost;
+            document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
+            document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+Math.round(this.cost*10)/10;
 
         }
     }

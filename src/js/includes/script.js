@@ -5,19 +5,22 @@ function addMilk(x) {
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
     checkMilkAchieve();
+    checkProductionAvievements();
 }
+
 function checkMilkAchieve(){
     for(let i=0;i < milkAchieve.length;i++){
         milkAchieve[i].checkStone(milk);
     }
 }
 function checkProductionAvievements(){
-    for(let i=0;i < productionAchieve.length;i++){
+    for(let i=0;i < productionAchieve.length;i++) {
         zehnBauern.checkStone(bauer.number);
         fuenfHoefe.checkStone(bauernhof.number);
-    }
 
+    }
 }
+
 
 
 

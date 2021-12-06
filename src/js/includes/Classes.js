@@ -7,6 +7,7 @@ class Milchproduktion {
     id;
     timeId;
     klasse;
+    upgrade;
 
 
     constructor(number, mps, cost,costMulti, name,id,timeId,klasse) {
@@ -18,6 +19,7 @@ class Milchproduktion {
         this.id =id;
         this.timeId=timeId;
         this.klasse="Milchproduktion";
+        this.upgrade=1;
     }
     add() {
         if (milk >= this.cost) {
@@ -26,7 +28,7 @@ class Milchproduktion {
             if(this.number!=0){
                 clearInterval(this.timeId);
             }
-            this.number++;
+            this.number+=this.upgrade;
             this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
             this.cost*=this.costMulti;
             totalMps+=this.mps;
@@ -35,6 +37,7 @@ class Milchproduktion {
 
         }
     }
+
 }
 class Achievements{
     milestone;

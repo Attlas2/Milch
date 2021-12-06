@@ -5,7 +5,7 @@ function addMilk(x) {
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
     checkMilkAchieve();
-    checkProductionAvievements();
+    checkProductionAchievements();
 }
 
 function checkMilkAchieve(){
@@ -13,13 +13,40 @@ function checkMilkAchieve(){
         milkAchieve[i].checkStone(milk);
     }
 }
-function checkProductionAvievements(){
+function checkProductionAchievements(){
     for(let i=0;i < productionAchieve.length;i++) {
         zehnBauern.checkStone(bauer.number);
         fuenfHoefe.checkStone(bauernhof.number);
 
     }
 }
+function empowerClick(cost,multi){
+    if(milk>=cost){
+        milk-=cost;
+    }
+    clickStrength=ä
+    multi;
+}
+function saveGame(){
+    saves={
+        'Milsch':milk,
+        'MPS':totalMps,
+        'bauerKosten':bauer.cost,
+        'bauerAnzahl':bauer.number
+    }
+    const saveString=JSON.stringify(saves)
+    localStorage.setItem('Speicherstand',saveString)
+}
+function loadGame(){
+    let saveStats = JSON.parse(localStorage.getItem('Speicherstand'))
+    bauer.cost=saveStats.bauerKosten/bauer.costMulti;
+    milk=saveStats.Milsch+bauer.cost;
+    bauer.number=saveStats.bauerAnzahl-1;
+    totalMps=saveStats.MPS-bauer.mps;
+    bauer.add();
+
+}
+
 
 
 

@@ -1,0 +1,151 @@
+@import "globals";
+
+//Generell Part
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+
+  display: flex;
+
+  section {
+    &#s_menu, &#s_shop {
+      width: 18%;
+    }
+    &#s_main{
+      width: 64%;
+    }
+  }
+}
+#s_menu{
+  background: url("../assets/img/ui_assets/menu/menu_background.png") no-repeat right;
+  background-size: cover;
+  div{
+    width: 100%;
+    &#m_top{
+      height: 09.5%;
+    }
+    &#m_main{
+      height: 67.7%;
+    }
+    &#m_bottom{
+      height: 21.1%;
+    }
+  }
+  .seperateLine{
+    width: 99%;
+  }
+}
+
+//Menu Part
+#m_top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    padding: 0;
+    width: 28%;
+    height: 85%;
+    border: 0;
+    margin-top: 10px;
+
+  }
+  #m_stats{
+    background: url("../assets/img/ui_assets/menu/menu_button_stats.png") no-repeat center;
+    background-size: contain;
+    margin-left: -15px;
+  }
+  #m_news{
+    background: url("../assets/img/ui_assets/menu/menu_button_news.png") no-repeat center;
+    background-size: contain;
+  }
+  #m_settings{
+    background: url("../assets/img/ui_assets/menu/menu_button_settings.png") no-repeat center;
+    background-size: contain;
+  }
+}
+
+#m_main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5px;
+  #m_achievements{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 10%;
+      @include header(false);
+      background: url("../assets/img/ui_assets/menu/menu_background_plank2.png") no-repeat center;
+      background-size: 100% 100%;
+    }
+    #m_achievementsList{
+      width: 80%;
+      height: 80%;
+    }
+    margin-top: 5px;
+    width: 90%;
+    height: 80%;
+    background: url("../assets/img/ui_assets/menu/menu_achivements_background.png") no-repeat center;
+    background-size: 100% 100%;
+
+  }
+  #m_upgrades{
+    margin-top: 20px;
+    @include header(false);
+    border: 0;
+    width: 90%;
+    height: 10%;
+    background: url("../assets/img/ui_assets/menu/menu_button_background_plank1.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+#m_bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -5px;
+  button{
+    border: 0;
+    padding: 10px 20px;
+    @include header(false);
+  }
+  #m_saveButtons {
+
+    display: flex;
+    justify-content: center;
+    margin: -30px 0 0 0;
+    button{
+      width: 42%;
+
+      margin: 0 5px;
+      background: url("../assets/img/ui_assets/menu/menu_button_background_small.png") no-repeat center;
+      background-size: 100% 80%;
+    }
+  }
+  #m_export{
+    background: url("../assets/img/ui_assets/menu/menu_button_background_large.png") no-repeat center;
+    background-size: 100% 80%;
+    width: 88%;
+
+  }
+}
+

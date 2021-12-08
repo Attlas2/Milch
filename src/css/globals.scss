@@ -1,0 +1,50 @@
+//Variablen
+$text_special: #ebc28d;
+$text_normal: #fff;
+
+$shadow_heading: 0 0 20px rgba(0, 0, 0, 0.55);
+
+//Fonts
+@font-face {
+  font-family: 'AmaticSC';
+  src: url(../assets/font/AmaticSC-Bold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'AmaticSC';
+  src: url(../assets/font/AmaticSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'HoltwoodOneSC';
+  src: url(../assets/font/HoltwoodOneSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+//Elements
+@mixin header($needsShadow){
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  color: $text_special;
+  @if $needsShadow == true {
+    text-shadow: $shadow_heading;
+  }
+}
+
+@mixin text(){
+  font-family: AmaticSC, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: $text_normal;
+
+}
+
+

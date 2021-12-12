@@ -16,6 +16,11 @@
   font-style: normal;
   font-weight: normal;
 }
+/*
+#################################################
+Generell Part
+#################################################
+ */
 html {
   width: 100%;
   height: 100%;
@@ -30,17 +35,33 @@ body {
   padding: 0;
   overflow-y: hidden;
   display: flex;
+  background: url("../assets/img/ui_assets/main/background.png") no-repeat center;
+  background-size: 100% 100%;
 }
 body section#s_menu, body section#s_shop {
-  width: 18%;
+  width: 20%;
 }
 body section#s_main {
-  width: 64%;
+  width: 60%;
+}
+body .currency {
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: line-through;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-left: 3px;
 }
 
+/*
+#################################################
+Menu Part
+#################################################
+ */
 #s_menu {
   background: url("../assets/img/ui_assets/menu/menu_background.png") no-repeat right;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 #s_menu div {
   width: 100%;
@@ -144,7 +165,7 @@ body section#s_main {
 }
 #m_bottom button {
   border: 0;
-  padding: 10px 20px;
+  padding: 3% 6%;
   font-family: HoltwoodOneSC, sans-serif;
   font-weight: normal;
   font-size: 1.5rem;
@@ -166,6 +187,231 @@ body section#s_main {
   background: url("../assets/img/ui_assets/menu/menu_button_background_large.png") no-repeat center;
   background-size: 100% 80%;
   width: 88%;
+}
+
+/*
+#################################################
+Shop Part
+#################################################
+ */
+#s_shop {
+  background: url("../assets/img/ui_assets/shop/background.png") no-repeat center;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#s_shop div#sh_items, #s_shop div#sh_logo {
+  margin-left: 8%;
+}
+#s_shop #sh_logo {
+  width: 77%;
+  height: 11%;
+}
+#s_shop #sh_items {
+  width: 77%;
+  height: 82%;
+}
+
+#sh_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/img/ui_assets/shop/logo_background.png") no-repeat center;
+  background-size: 100% 100%;
+}
+#sh_logo span {
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ebc28d;
+  font-size: 2.5rem;
+}
+
+#sh_items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 2%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+#sh_items::-webkit-scrollbar {
+  display: none;
+}
+
+.sh_item {
+  width: 100%;
+  height: 14%;
+  margin-bottom: 6%;
+  background: url("../assets/img/ui_assets/shop/item_background.png") no-repeat center;
+  background-size: 100% 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  gap: 0 0;
+  grid-template-areas: "img content";
+  font-family: AmaticSC, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: #fff;
+}
+.sh_item .sh_item_img {
+  position: relative;
+  grid-area: img;
+  height: 100%;
+  max-height: 100%;
+}
+.sh_item .sh_item_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-area: content;
+}
+.sh_item .sh_item_name {
+  position: relative;
+  top: 12%;
+}
+.sh_item .sh_item_cost {
+  position: relative;
+  top: -12%;
+}
+.sh_item .sh_item_count {
+  z-index: 1;
+  margin-right: 10%;
+  text-align: right;
+}
+
+/*
+#################################################
+Main Part
+#################################################
+ */
+#s_main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#s_main #ma_klicker {
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1/1;
+}
+#s_main #ma_header {
+  min-width: 40%;
+  min-height: 11%;
+}
+#s_main #ma_screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#ma_header {
+  background: url("../assets/img/ui_assets/main/title_background.png") no-repeat center;
+  background-size: 100% 100%;
+  margin-top: 2%;
+}
+#ma_header h1 {
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ebc28d;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  padding-top: 2.5%;
+  margin: 0;
+}
+
+#ma_klicker {
+  margin-top: 5%;
+  background: url("../assets/img/ui_assets/main/clicker_background.png") no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ma_klicker #ma_klick {
+  min-width: 95%;
+}
+
+#ma_screen {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#ma_screen img {
+  position: absolute;
+  overflow-x: hidden;
+}
+#ma_screen #ma_overworld {
+  z-index: -10;
+  top: 48%;
+  left: -9%;
+  width: 110%;
+}
+#ma_screen #ma_flower {
+  z-index: -5;
+  width: 12%;
+  top: 65%;
+  left: 82%;
+}
+#ma_screen #ma_bauer {
+  width: 9%;
+  top: 50%;
+  left: 25%;
+}
+#ma_screen #ma_baum {
+  width: 35%;
+  top: 30%;
+}
+#ma_screen #ma_weide {
+  width: 20%;
+  top: 56%;
+  left: 60%;
+}
+#ma_screen #ma_lkw {
+  z-index: -3;
+  width: 35%;
+  top: 50%;
+  left: 80%;
+}
+#ma_screen #ma_minen {
+  width: 11%;
+  top: 65%;
+}
+#ma_screen #ma_leitung {
+  width: 45%;
+  top: 85%;
+  left: 8%;
+}
+#ma_screen #ma_maschine {
+  width: 25%;
+  top: 50%;
+  left: 35%;
+}
+#ma_screen #ma_bauernhof {
+  z-index: -12;
+  width: 35%;
+  left: -7%;
+  top: 10%;
+}
+#ma_screen #ma_fabrik {
+  z-index: -12;
+  width: 32%;
+  left: 72%;
+  top: 11%;
+}
+#ma_screen #ma_turm {
+  z-index: -13;
+  width: 25%;
+  top: -12%;
+  left: 15%;
 }
 
 /*# sourceMappingURL=index.css.map */

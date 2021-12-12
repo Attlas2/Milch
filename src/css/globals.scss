@@ -38,6 +38,16 @@ $shadow_heading: 0 0 20px rgba(0, 0, 0, 0.55);
   }
 }
 
+@mixin currency($fontSize: 1.3rem){
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: line-through;
+  color: $text_normal;
+  font-size: $fontSize;
+
+}
+
 @mixin text(){
   font-family: AmaticSC, sans-serif;
   font-weight: bold;

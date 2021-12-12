@@ -1,8 +1,14 @@
 function addMilk(x) {
     milk+=x;
     document.getElementById("milkcounter").innerHTML =Math.round(milk*10)/10+" Milch"
-    if(milk>1000){
+    if(milk>=1000){
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
+    }
+    if(milk>=1000000){
+        document.getElementById("milkcounter").innerHTML=Math.round(milk/100000)/10+"M Milch"
+    }
+    if(milk>=1000000000){
+        document.getElementById("milkcounter").innerHTML=Math.round(milk/10000000)/10+"B Milch"
     }
     checkMilkAchieve();
     checkProductionAchievements();

@@ -20,7 +20,6 @@ class Milchproduktion {
         this.id =id;
         this.timeId=timeId;
         this.klasse="Milchproduktion";
-
         this.upgrade=1;
 
     }
@@ -40,6 +39,24 @@ class Milchproduktion {
             document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+Math.round(this.cost*10)/10;
 
         }
+    }
+    load(price,count){
+        if(count>0){
+            this.cost=price/this.costMulti;
+            milk+=this.cost;
+            this.number=count-1;
+            totalMps-=this.mps;
+            this.add();
+        }
+
+        /*
+        bauer.cost=saveStats.bauerKosten/bauer.costMulti;
+        milk=saveStats.Milsch+bauer.cost;
+        bauer.number=saveStats.bauerAnzahl-1;
+        totalMps=saveStats.MPS-bauer.mps;
+        bauer.add();
+        */
+
     }
 
 }

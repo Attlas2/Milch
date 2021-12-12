@@ -1,10 +1,15 @@
 function addMilk(x) {
     milk+=x;
     document.getElementById("milkcounter").innerHTML =Math.round(milk*10)/10+" Milch"
-    if(milk>1000){
+    if(milk>=1000){
         document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
-
+    if(milk>=1000000){
+        document.getElementById("milkcounter").innerHTML=Math.round(milk/100000)/10+"M Milch"
+    }
+    if(milk>=1000000000){
+        document.getElementById("milkcounter").innerHTML=Math.round(milk/10000000)/10+"B Milch"
+    }
     checkMilkAchieve();
     checkProductionAchievements();
 }
@@ -21,42 +26,53 @@ function checkProductionAchievements(){
 
     }
 }
-function empowerClick(cost,multi){
-    if(milk>=cost){
-        milk-=cost;
-    }
-    clickStrength=ä
-    multi;
-}
+
 function saveGame(){
     saves={
-        'Milsch':milk,
+        'Milch':milk,
         'MPS':totalMps,
         'bauerKosten':bauer.cost,
-        'bauerAnzahl':bauer.number
+        'bauerAnzahl':bauer.number,
+        'milchbaumKosten':milchbaum.cost,
+        'milchbaumAnzahl':milchbaum.number,
+        'kuhweideKosten':kuhweide.cost,
+        'kuhweideAnzahl':kuhweide.number,
+        'bauernhofKosten':bauernhof.cost,
+        'bauernhofAnzahl':bauernhof.number,
+        'saugmachineKosten':saugmachine.cost,
+        'saugmachineAnzahl':saugmachine.number,
+        'milchLKWKosten':milchLKW.cost,
+        'milchLKWAnzahl':milchLKW.number,
+        'milchfabrikKosten':milchfabrik.cost,
+        'milchfabrikAnzahl':milchfabrik.number,
+        'milchturmKosten':milchturm.cost,
+        'milchturmAnzahl':milchturm.number,
+        'milchmienenKosten':milchmienen.cost,
+        'milchmienenAnzahl':milchmienen.number,
+        'milchleitungKosten':milchleitung.cost,
+        'milchleitungAnzahl':milchleitung.number,
     }
-    const saveString=JSON.stringify(saves)
+    const saveString=btoa(JSON.stringify(saves))
     localStorage.setItem('Speicherstand',saveString)
 }
+
 function loadGame(){
-    let saveStats = JSON.parse(localStorage.getItem('Speicherstand'))
-    bauer.cost=saveStats.bauerKosten/bauer.costMulti;
-    milk=saveStats.Milsch+bauer.cost;
-    bauer.number=saveStats.bauerAnzahl-1;
-    totalMps=saveStats.MPS-bauer.mps;
-    bauer.add();
 
+    let saveStats = JSON.parse(atob(localStorage.getItem('Speicherstand')))
+    milk=saveStats.Milch;
+    totalMps=saveStats.MPS;
+    bauer.load(saveStats.bauerKosten,saveStats.bauerAnzahl);
+    milchbaum.load(saveStats.milchbaumKosten,saveStats.milchbaumAnzahl);
+    kuhweide.load(saveStats.kuhweideKosten,saveStats.kuhweideAnzahl);
+    bauernhof.load(saveStats.bauernhofKosten,saveStats.bauernhofAnzahl);
+    saugmachine.load(saveStats.saugmachineKosten,saveStats.saugmachineAnzahl);
+    milchLKW.load(saveStats.milchLKWKosten,saveStats.milchLKWAnzahl);
+    milchfabrik.load(saveStats.milchfabrikKosten,saveStats.milchfabrikAnzahl);
+    milchturm.load(saveStats.milchturmKosten,saveStats.milchturmAnzahl);
+    milchmienen.load(saveStats.milchmienenKosten,saveStats.milchmienenAnzahl);
+    milchleitung.load(saveStats.milchleitungKosten,saveStats.milchleitungAnzahl);
 }
 
-
-
-
-function checkAllAchieve(){
-    let entries = Object.entries(achievments);
-    for(let i=0;i < entries.length;i++){
-      console.log(eval('achievments.' + entries[i][0] + ".achieved"));
-    }
-}
 
 
 

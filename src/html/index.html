@@ -1,29 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <script src="../js/includes/Classes.js"></script>
     <script src="../js/includes/Objects.js"></script>
     <script src="../js/includes/script.js"></script>
+    <title>Milch Klicker</title>
 
-
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <h1 id="milkcounter">0 Milch</h1>
-    <h1 id="mpscounter"> 0 MPS</h1>
-    <img src="../assets/cow.png" style=" width: 17%" onclick="addMilk(clickStrength)">
+    <!--
+    ID Namensgebung:
+        s_... = Für einen Haupt-Sektionsteil
+        m_... = Für alles im Menü
+        ma_.. = Für alles auf der Main seite
+        sh_.. = Für alles vom Shop
+    -->
+    <section id="s_menu" >
+        <div id="m_top">
+            <button type="button" id="m_stats"></button>
+            <button type="button" id="m_news"></button>
+            <button type="button" id="m_settings"></button>
+        </div>
+        <img src="../assets/img/ui_assets/menu/menu_frame_line.png" alt="Trennlinie zur Separierung" class="seperateLine">
+        <div id="m_main">
+            <div id="m_achievements">
+                <span>Erfolge</span>
+                <div id="m_achievementsList">
 
-    <h1 id="bauerID">0 Bauer</h1>
-    <img src="../assets/farmer.png" style="width: 17%" onclick="bauer.add()">
-    <h1 id="bauernhofID">0 Bauernhöfe</h1>
-    <img src="../assets/farm.png" style="width: 12%" onclick="bauernhof.add()">
-
-    <img src="../assets/farm.png" onclick="saveGame()">
-    <img src="../assets/farmer.png" style="width:10%" onclick="loadGame()">
-
-    <h1 id="kuhweideID">0 Kuhweiden</h1>
-    <img src="../assets/farm.png" style="width: 12%" onclick="kuhweide.add()">
-
+                </div>
+            </div>
+            <button type="button" id="m_upgrades">Upgrades</button>
+        </div>
+        <img src="../assets/img/ui_assets/menu/menu_frame_line.png" alt="Trennlinie zur Separierung" class="seperateLine">
+        <div id="m_bottom">
+            <div id="m_saveButtons">
+                <button type="button" id="m_save">Save</button>
+                <button type="button" id="m_load">Load</button>
+            </div>
+            <button type="button" id="m_export">Exportieren</button>
+        </div>
+    </section>
+    <section id="s_main">
+        <header id="ma_header">
+            <h1>Milch Klicker</h1>
+        </header>
+        <div id="ma_klicker">
+            <img id="ma_klick" src="../assets/img/ui_assets/main/clicker.png" alt="Kuh">
+        </div>
+       <div id="ma_screen">
+           <img id="ma_turm" src="../../src/assets/img/graphics/screen/milchturm.png" alt="Milchturm">
+           <img id="ma_fabrik" src="../../src/assets/img/graphics/screen/milchfabrik.png" alt="Milch Fabrik">
+           <img id="ma_bauernhof" src="../../src/assets/img/graphics/screen/bauernhof.png" alt="Bauernhof">
+           <img id="ma_overworld" src="../../src/assets/img/graphics/screen/overworld.png" alt="Grass Landschaft">
+           <img id="ma_flower" src="../../src/assets/img/graphics/screen/flower.png" alt="Blume">
+           <img id="ma_bauer" src="../../src/assets/img/graphics/screen/milchbauer.png" alt="Milch Bauer">
+           <img id="ma_baum" src="../../src/assets/img/graphics/screen/milchbaum.png" alt="Milch Baum">
+           <img id="ma_weide" src="../../src/assets/img/graphics/screen/kuhweide.png" alt="Kuhweide">
+           <img id="ma_lkw" src="../../src/assets/img/graphics/screen/milchlkw.png" alt="Milch LKW">
+           <img id="ma_minen" src="../../src/assets/img/graphics/screen/milchminen.png" alt="Milch Minen">
+           <img id="ma_leitung" src="../../src/assets/img/graphics/screen/milchleitung.png" alt="Milchleitung">
+           <img id="ma_maschine" src="../../src/assets/img/graphics/screen/milchmaschine.png" alt="Milchmaschine">
+       </div>
+    </section>
+    <section id="s_shop">
+        <div id="sh_logo">
+            <span>Shop</span>
+        </div>
+        <div id="sh_items">
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/bauer.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchbauer</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchbaum.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchbaum</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/kuhweide.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Kuhweide</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/bauernhof.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Bauernhof</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchMaschine.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Saugmaschine</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchLkw.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milch LKW</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchfabrik.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchfabrik</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchturm.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchturm</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchminen.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchminen</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+            <div class="sh_item">
+                <img class="sh_item_img" src="../assets/img/graphics/shop/milchleitung.png" alt="">
+                <div class="sh_item_content">
+                    <span class="sh_item_name">Milchleitung</span>
+                    <span class="sh_item_count">1000<span>x</span></span>
+                    <span class="sh_item_cost">10000<span class="currency">M</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

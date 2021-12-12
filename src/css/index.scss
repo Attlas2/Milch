@@ -1,0 +1,419 @@
+@import "globals";
+
+/*
+#################################################
+Generell Part
+#################################################
+ */
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+
+  display: flex;
+
+  background: url("../assets/img/ui_assets/main/background.png") no-repeat center;
+  background-size: 100% 100%;
+
+  section {
+    &#s_menu, &#s_shop {
+      width: 20%;
+    }
+
+    &#s_main {
+      width: 60%;
+    }
+  }
+
+  .currency {
+    @include currency();
+    margin-left: 3px;
+  }
+}
+
+
+/*
+#################################################
+Menu Part
+#################################################
+ */
+#s_menu {
+  background: url("../assets/img/ui_assets/menu/menu_background.png") no-repeat right;
+  background-size: 100% 100%;
+
+  div {
+    width: 100%;
+
+    &#m_top {
+      height: 09.5%;
+    }
+
+    &#m_main {
+      height: 67.7%;
+    }
+
+    &#m_bottom {
+      height: 21.1%;
+    }
+  }
+  .seperateLine{
+    width: 99%;
+  }
+}
+
+#m_top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    padding: 0;
+    width: 28%;
+    height: 85%;
+    border: 0;
+    margin-top: 10px;
+
+  }
+  #m_stats{
+    background: url("../assets/img/ui_assets/menu/menu_button_stats.png") no-repeat center;
+    background-size: contain;
+    margin-left: -15px;
+  }
+  #m_news{
+    background: url("../assets/img/ui_assets/menu/menu_button_news.png") no-repeat center;
+    background-size: contain;
+  }
+  #m_settings{
+    background: url("../assets/img/ui_assets/menu/menu_button_settings.png") no-repeat center;
+    background-size: contain;
+  }
+}
+
+#m_main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5px;
+  #m_achievements{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 10%;
+      @include header(false);
+      background: url("../assets/img/ui_assets/menu/menu_background_plank2.png") no-repeat center;
+      background-size: 100% 100%;
+    }
+    #m_achievementsList{
+      width: 80%;
+      height: 80%;
+    }
+    margin-top: 5px;
+    width: 90%;
+    height: 80%;
+    background: url("../assets/img/ui_assets/menu/menu_achivements_background.png") no-repeat center;
+    background-size: 100% 100%;
+
+  }
+  #m_upgrades{
+    margin-top: 20px;
+    @include header(false);
+    border: 0;
+    width: 90%;
+    height: 10%;
+    background: url("../assets/img/ui_assets/menu/menu_button_background_plank1.png") no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+#m_bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -5px;
+  button {
+    border: 0;
+    padding: 3% 6%;
+    @include header(false);
+  }
+  #m_saveButtons {
+
+    display: flex;
+    justify-content: center;
+    margin: -30px 0 0 0;
+    button{
+      width: 42%;
+
+      margin: 0 5px;
+      background: url("../assets/img/ui_assets/menu/menu_button_background_small.png") no-repeat center;
+      background-size: 100% 80%;
+    }
+  }
+
+  #m_export {
+    background: url("../assets/img/ui_assets/menu/menu_button_background_large.png") no-repeat center;
+    background-size: 100% 80%;
+    width: 88%;
+
+  }
+}
+
+/*
+#################################################
+Shop Part
+#################################################
+ */
+
+#s_shop {
+  background: url("../assets/img/ui_assets/shop/background.png") no-repeat center;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div#sh_items, div#sh_logo {
+    margin-left: 8%;
+  }
+
+  #sh_logo {
+    width: 77%;
+    height: 11%;
+  }
+
+  #sh_items {
+    width: 77%;
+    height: 82%;
+  }
+}
+
+#sh_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/img/ui_assets/shop/logo_background.png") no-repeat center;
+  background-size: 100% 100%;
+
+  span {
+    @include header(false);
+    font-size: 2.5rem;
+  }
+
+}
+
+#sh_items {
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 2%;
+  overflow-y: auto;
+
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sh_item {
+  width: 100%;
+  height: 14%;
+  margin-bottom: 6%;
+
+  background: url("../assets/img/ui_assets/shop/item_background.png") no-repeat center;
+  background-size: 100% 100%;
+
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  gap: 0 0;
+  grid-template-areas:
+    "img content";
+
+  @include text();
+
+  .sh_item_img {
+    position: relative;
+    grid-area: img;
+
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .sh_item_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    grid-area: content;
+  }
+
+  .sh_item_name {
+    position: relative;
+    top: 12%;
+  }
+
+  .sh_item_cost {
+    position: relative;
+    top: -12%;
+  }
+
+  .sh_item_count {
+    z-index: 1;
+    margin-right: 10%;
+    text-align: right;
+  }
+}
+
+/*
+#################################################
+Main Part
+#################################################
+ */
+
+#s_main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  #ma_klicker {
+    width: clamp(100px, 200px, 300px);
+    height: clamp(100px, 200px, 300px);
+
+    aspect-ratio: 1/1;
+
+  }
+
+  #ma_header {
+    min-width: 40%;
+    min-height: 11%;
+
+  }
+
+  #ma_screen{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#ma_header {
+  background: url("../assets/img/ui_assets/main/title_background.png") no-repeat center;
+  background-size: 100% 100%;
+  margin-top: 2%;
+
+  h1 {
+    @include header(true);
+    padding-top: 2.5%;
+    margin: 0;
+  }
+}
+
+#ma_klicker {
+  margin-top: 5%;
+  background: url("../assets/img/ui_assets/main/clicker_background.png") no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #ma_klick {
+    min-width: 95%;
+  }
+}
+
+#ma_screen {
+
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+  img{
+    position: absolute;
+    overflow-x: hidden;
+  }
+  #ma_overworld{
+    z-index: -10;
+    top: 48%;
+    left: -9%;
+    width: 110%;
+  }
+  #ma_flower{
+    z-index: -5;
+    width: 12%;
+    top: 65%;
+    left: 82%;
+  }
+  #ma_bauer{
+    width: 9%;
+    top: 50%;
+    left: 25%;
+  }
+  #ma_baum{
+    width: 35%;
+    top: 30%;
+  }
+  #ma_weide{
+    width: 20%;
+    top: 56%;
+    left: 60%;
+  }
+  #ma_lkw{
+    z-index: -3;
+    width: 35%;
+    top: 50%;
+    left: 80%;
+  }
+  #ma_minen{
+    width: 11%;
+    top: 65%;
+  }
+  #ma_leitung{
+    width: 45%;
+    top: 85%;
+    left: 8%;
+  }
+  #ma_maschine{
+    width: 25%;
+    top: 50%;
+    left: 35%;
+  }
+  #ma_bauernhof{
+    z-index: -12;
+    width: 35%;
+    left: -7%;
+    top: 10%;
+  }
+  #ma_fabrik{
+    z-index: -12;
+    width: 32%;
+    left: 72%;
+    top: 11%;
+  }
+  #ma_turm{
+    z-index: -13;
+    width: 25%;
+    top: -12%;
+    left: 15%;
+  }
+}
+

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Amatic SC";
+  src: url(../assets/font/AmaticSC-Bold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url(../assets/font/AmaticSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Holtwood One SC";
+  src: url(../assets/font/HoltwoodOneSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=globals.css.map */

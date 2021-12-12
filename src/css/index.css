@@ -312,6 +312,9 @@ Main Part
 }
 
 #ma_header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background: url("../assets/img/ui_assets/main/title_background.png") no-repeat center;
   background-size: 100% 100%;
   margin-top: 2%;
@@ -323,8 +326,29 @@ Main Part
   text-align: center;
   color: #ebc28d;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-  padding-top: 2.5%;
+  padding-top: 2%;
   margin: 0;
+}
+#ma_header #ma_currentMilk {
+  font-family: AmaticSC, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 1%;
+}
+#ma_header h2 {
+  margin: 0;
+  text-align: center;
+}
+#ma_header .currencyTitle {
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: line-through;
+  color: #fff;
+  font-size: 1.8rem;
 }
 
 #ma_klicker {

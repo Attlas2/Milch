@@ -1,14 +1,29 @@
+function init(){
+    if (localStorage.getItem("Speicherstand")!=null) {
+        loadGame()
+    }
+    document.getElementById("ma_klicker").addEventListener("click",ev =>  addMilk(1));
+    document.getElementById("m_save").addEventListener("click",ev=> saveGame());
+    document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
+    document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
+    document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(1));
+    document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(1));
+
+
+
+}
+
 function addMilk(x) {
     milk+=x;
-    document.getElementById("milkcounter").innerHTML =Math.round(milk*10)/10+" Milch"
+    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+" Milch"
     if(milk>=1000){
-        document.getElementById("milkcounter").innerHTML=Math.round(milk/100)/10+"K Milch"
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100)/10+"K Milch"
     }
     if(milk>=1000000){
-        document.getElementById("milkcounter").innerHTML=Math.round(milk/100000)/10+"M Milch"
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100000)/10+"M Milch"
     }
     if(milk>=1000000000){
-        document.getElementById("milkcounter").innerHTML=Math.round(milk/10000000)/10+"B Milch"
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/10000000)/10+"B Milch"
     }
     checkMilkAchieve();
     checkProductionAchievements();
@@ -56,21 +71,21 @@ function saveGame(){
     localStorage.setItem('Speicherstand',saveString)
 }
 
-function loadGame(){
-
-    let saveStats = JSON.parse(atob(localStorage.getItem('Speicherstand')))
-    milk=saveStats.Milch;
-    totalMps=saveStats.MPS;
-    bauer.load(saveStats.bauerKosten,saveStats.bauerAnzahl);
-    milchbaum.load(saveStats.milchbaumKosten,saveStats.milchbaumAnzahl);
-    kuhweide.load(saveStats.kuhweideKosten,saveStats.kuhweideAnzahl);
-    bauernhof.load(saveStats.bauernhofKosten,saveStats.bauernhofAnzahl);
-    saugmachine.load(saveStats.saugmachineKosten,saveStats.saugmachineAnzahl);
-    milchLKW.load(saveStats.milchLKWKosten,saveStats.milchLKWAnzahl);
-    milchfabrik.load(saveStats.milchfabrikKosten,saveStats.milchfabrikAnzahl);
-    milchturm.load(saveStats.milchturmKosten,saveStats.milchturmAnzahl);
-    milchmienen.load(saveStats.milchmienenKosten,saveStats.milchmienenAnzahl);
-    milchleitung.load(saveStats.milchleitungKosten,saveStats.milchleitungAnzahl);
+function loadGame() {
+        let saveStats = JSON.parse(atob(localStorage.getItem('Speicherstand')))
+        milk = saveStats.Milch;
+        totalMps = saveStats.MPS;
+        bauer.load(saveStats.bauerKosten, saveStats.bauerAnzahl);
+        milchbaum.load(saveStats.milchbaumKosten, saveStats.milchbaumAnzahl);
+        kuhweide.load(saveStats.kuhweideKosten, saveStats.kuhweideAnzahl);
+        bauernhof.load(saveStats.bauernhofKosten, saveStats.bauernhofAnzahl);
+        saugmachine.load(saveStats.saugmachineKosten, saveStats.saugmachineAnzahl);
+        milchLKW.load(saveStats.milchLKWKosten, saveStats.milchLKWAnzahl);
+        milchfabrik.load(saveStats.milchfabrikKosten, saveStats.milchfabrikAnzahl);
+        milchturm.load(saveStats.milchturmKosten, saveStats.milchturmAnzahl);
+        milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
+        milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
+    
 }
 
 

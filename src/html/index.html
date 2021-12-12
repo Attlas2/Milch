@@ -5,7 +5,11 @@
     <script src="../js/includes/Classes.js"></script>
     <script src="../js/includes/Objects.js"></script>
     <script src="../js/includes/script.js"></script>
+
     <title>Milch Klicker</title>
+    <script>
+        window.onload = init;
+    </script>
 
     <link rel="stylesheet" href="../css/index.css">
 </head>
@@ -47,7 +51,7 @@
             <h1>Milch Klicker</h1>
             <h2><span id="ma_currentMilk">100000000000</span><span class="currencyTitle">M</span></h2>
         </header>
-        <div id="ma_klicker">
+        <div id="ma_klicker" >
             <img id="ma_klick" src="../assets/img/ui_assets/main/clicker.png" alt="Kuh">
         </div>
        <div id="ma_screen">
@@ -70,7 +74,7 @@
             <span>Shop</span>
         </div>
         <div id="sh_items">
-            <div class="sh_item">
+            <div class="sh_item" id="bauerID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/bauer.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchbauer</span>
@@ -78,7 +82,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="baumID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchbaum.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchbaum</span>
@@ -86,7 +90,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="kuhweideID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/kuhweide.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Kuhweide</span>
@@ -94,7 +98,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="bauernhofID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/bauernhof.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Bauernhof</span>
@@ -102,7 +106,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="saugmachineID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchMaschine.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Saugmaschine</span>
@@ -110,7 +114,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="lkwID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchLkw.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milch LKW</span>
@@ -118,7 +122,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="fabrikID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchfabrik.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchfabrik</span>
@@ -126,7 +130,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="turmID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchturm.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchturm</span>
@@ -134,7 +138,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="mieneID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchminen.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchminen</span>
@@ -142,7 +146,7 @@
                     <span class="sh_item_cost">10000<span class="currency">M</span></span>
                 </div>
             </div>
-            <div class="sh_item">
+            <div class="sh_item" id="leitungID">
                 <img class="sh_item_img" src="../assets/img/graphics/shop/milchleitung.png" alt="">
                 <div class="sh_item_content">
                     <span class="sh_item_name">Milchleitung</span>

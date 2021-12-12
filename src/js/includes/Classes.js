@@ -35,8 +35,10 @@ class Milchproduktion {
             this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
             this.cost*=this.costMulti;
             totalMps+=this.mps;
-            document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
-            document.getElementById(this.id).innerHTML = this.number + " " +this.name+" Kosten: "+Math.round(this.cost*10)/10;
+            //document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
+            document.getElementById(this.id).getElementsByClassName("sh_item_count").innerHTML = this.number;
+            document.getElementById(this.id).getElementsByClassName("sh_item_cost").innerHTML = Math.round(this.cost*100)/100;
+
 
         }
     }

@@ -314,14 +314,29 @@ Main Part
 }
 
 #ma_header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background: url("../assets/img/ui_assets/main/title_background.png") no-repeat center;
   background-size: 100% 100%;
   margin-top: 2%;
 
   h1 {
     @include header(true);
-    padding-top: 2.5%;
+    padding-top: 2%;
     margin: 0;
+  }
+  #ma_currentMilk{
+    @include text();
+    font-size: 2rem;
+    margin-right: 1%;
+  }
+  h2{
+    margin: 0;
+    text-align: center;
+  }
+  .currencyTitle{
+    @include currency(1.8rem);
   }
 }
 

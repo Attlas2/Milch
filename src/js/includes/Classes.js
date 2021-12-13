@@ -42,6 +42,7 @@ class Milchproduktion {
             roundCost(this.id,"sh_item_count",this.number,"")
 
 
+
         }
     }
     load(price,count){

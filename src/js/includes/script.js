@@ -13,12 +13,28 @@ function init(){
     document.getElementById("turmID").addEventListener("click",ev=> milchturm.add());
     document.getElementById("mieneID").addEventListener("click",ev=> milchmienen.add());
     document.getElementById("leitungID").addEventListener("click",ev=> milchleitung.add());
+    document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
+    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add());
+
+
+
+
 }
 
 function addMilk(x) {
     milk+=x;
     document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+" "
     roundCurrency("ma_currentMilk",milk);
+    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+""
+    if(milk>=1000){
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100)/10+"K"
+    }
+    if(milk>=1000000){
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100000)/10+"M"
+    }
+    if(milk>=1000000000){
+        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/10000000)/10+"Mrd"
+    }
     checkMilkAchieve();
     checkProductionAchievements();
 }
@@ -32,7 +48,6 @@ function checkProductionAchievements(){
     for(let i=0;i < productionAchieve.length;i++) {
         zehnBauern.checkStone(bauer.number);
         fuenfHoefe.checkStone(bauernhof.number);
-
     }
 }
 
@@ -80,6 +95,7 @@ function loadGame() {
         milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
         milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
 
+
 }
 function roundCurrency(id,currency){
 
@@ -94,19 +110,21 @@ function roundCurrency(id,currency){
     }
 
 }
-function roundCost(id,clas,currency,exString){
+function roundCost(id,clas,currency,exString) {
 
-    if(currency>=1000){
-        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML=Math.round(currency/100)/10+"K "+ exString
+    if (currency >= 1000) {
+        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 100) / 10 + "K " + exString
     }
-    if(currency>=1000000){
-        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML=Math.round(currency/100000)/10+"M "+exString
+    if (currency >= 1000000) {
+        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 100000) / 10 + "M " + exString
     }
-    if(currency>=1000000000){
-        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML=Math.round(currency/10000000)/10+"B "+exString
+    if (currency >= 1000000000) {
+        document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 10000000) / 10 + "B " + exString
     }
-
 }
+
+
+
 
 
 

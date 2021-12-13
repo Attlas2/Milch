@@ -6,8 +6,8 @@ function init(){
     document.getElementById("m_save").addEventListener("click",ev=> saveGame());
     document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
     document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
-    document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(1));
-    document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(1));
+    document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
+    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add());
 
 
 
@@ -38,7 +38,6 @@ function checkProductionAchievements(){
     for(let i=0;i < productionAchieve.length;i++) {
         zehnBauern.checkStone(bauer.number);
         fuenfHoefe.checkStone(bauernhof.number);
-
     }
 }
 
@@ -85,7 +84,6 @@ function loadGame() {
         milchturm.load(saveStats.milchturmKosten, saveStats.milchturmAnzahl);
         milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
         milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
-    
 }
 
 

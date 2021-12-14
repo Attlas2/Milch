@@ -38,7 +38,7 @@ class Milchproduktion {
             //document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
             document.getElementById(this.id).getElementsByClassName("sh_item_count")[0].innerHTML = this.number;
             document.getElementById(this.id).getElementsByClassName("sh_item_cost")[0].innerHTML = Math.round(this.cost*100)/100+"<span class=\"currency\">M</span>";
-            roundCost(this.id,"sh_item_cost",this.cost, "<span className=\"currency\">M</span>")
+            roundCost(this.id,"sh_item_cost",this.cost, "<span class=\"currency\">M</span>")
             roundCost(this.id,"sh_item_count",this.number,"")
 
 

@@ -1,5 +1,5 @@
 function init(){
-    if (localStorage.getItem("Speicherstand")!=null) {
+    if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }
     document.getElementById("ma_klicker").addEventListener("click",ev =>  addMilk(1));
@@ -10,6 +10,7 @@ function init(){
     document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
     document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add());
     document.getElementById("lkwID").addEventListener("click",ev=> milchLKW.add());
+    document.getElementById("fabrikID").addEventListener("click",cv=>milchfabrik.add())
     document.getElementById("turmID").addEventListener("click",ev=> milchturm.add());
     document.getElementById("mieneID").addEventListener("click",ev=> milchmienen.add());
     document.getElementById("leitungID").addEventListener("click",ev=> milchleitung.add());
@@ -23,18 +24,10 @@ function init(){
 
 function addMilk(x) {
     milk+=x;
-    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+" "
+    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+" ";
     roundCurrency("ma_currentMilk",milk);
-    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+""
-    if(milk>=1000){
-        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100)/10+"K"
-    }
-    if(milk>=1000000){
-        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/100000)/10+"M"
-    }
-    if(milk>=1000000000){
-        document.getElementById("ma_currentMilk").innerHTML=Math.round(milk/10000000)/10+"Mrd"
-    }
+    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+"";
+    roundCurrency("ma_currentMilk",milk);
     checkMilkAchieve();
     checkProductionAchievements();
 }

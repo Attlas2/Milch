@@ -3,7 +3,6 @@ class Milchproduktion {
     number;
     mps;
     cost;
-
     costMulti;
     id;
     timeId;
@@ -32,7 +31,7 @@ class Milchproduktion {
             }
 
             this.number+=this.upgrade;
-            this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
+            this.timeId=setInterval(addMilk, 200,(this.mps/5)*this.number);
             this.cost*=this.costMulti;
             totalMps+=this.mps;
             //document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";

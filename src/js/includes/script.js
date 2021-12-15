@@ -4,6 +4,8 @@ function init(){
     }
     document.getElementById("ma_klicker").addEventListener("click",ev =>  addMilk(1));
     document.getElementById("m_save").addEventListener("click",ev=> saveGame());
+    document.getElementById("m_export").addEventListener("click,",ev =>exportieren());
+    document.getElementById("m_load").addEventListener("click,",ev =>importieren());
     document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
     document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
     document.getElementById("kuhweideID").addEventListener("click",ev=> kuhweide.add());
@@ -15,18 +17,12 @@ function init(){
     document.getElementById("mieneID").addEventListener("click",ev=> milchmienen.add());
     document.getElementById("leitungID").addEventListener("click",ev=> milchleitung.add());
     document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
-    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add());
-
-
-
-
+    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add())
 }
 
 function addMilk(x) {
     milk+=x;
-    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+" ";
-    roundCurrency("ma_currentMilk",milk);
-    document.getElementById("ma_currentMilk").innerHTML =Math.round(milk*10)/10+"";
+    document.getElementById("ma_currentMilk").innerHTML =(Math.round(milk*100)/100).toFixed(2)+" ";
     roundCurrency("ma_currentMilk",milk);
     checkMilkAchieve();
     checkProductionAchievements();
@@ -93,13 +89,13 @@ function loadGame() {
 function roundCurrency(id,currency){
 
     if(currency>=1000){
-        document.getElementById(id).innerHTML=Math.round(currency/100)/10+"K "
+        document.getElementById(id).innerHTML=(Math.round(currency/10)/100).toFixed(2)+"K "
     }
     if(currency>=1000000){
-        document.getElementById(id).innerHTML=Math.round(currency/100000)/10+"M "
+        document.getElementById(id).innerHTML=(Math.round(currency/10000)/100).toFixed(2)+"M "
     }
     if(currency>=1000000000){
-        document.getElementById(id).innerHTML=Math.round(currency/10000000)/10+"B "
+        document.getElementById(id).innerHTML=(Math.round(currency/1000000)/100).toFixed(2)+"B "
     }
 
 }
@@ -114,6 +110,13 @@ function roundCost(id,clas,currency,exString) {
     if (currency >= 1000000000) {
         document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 10000000) / 10 + "B " + exString
     }
+}
+function exportieren (){
+    saveGame();
+    prompt("Kopiere den Speichercode!!!",localStorage.getItem('Speicherstand'))
+}
+function importieren(){
+   localStorage.setItem('Speicherstand',prompt("Fügen Sie den Speichercode ein!!!"));
 }
 
 

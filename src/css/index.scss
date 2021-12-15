@@ -301,6 +301,7 @@ Main Part
   }
 
   #ma_header {
+
     min-width: 40%;
     min-height: 11%;
 
@@ -351,6 +352,13 @@ Main Part
   #ma_klick {
     min-width: 95%;
   }
+
+  .klickDown{
+    min-width: 110% !important;
+
+  }
+
+
 }
 
 #ma_screen {

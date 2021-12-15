@@ -1,4 +1,5 @@
 function init(){
+    styleInit();
     if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }

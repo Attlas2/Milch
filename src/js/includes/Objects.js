@@ -26,7 +26,6 @@ milchtopia= new Milchproduktion(0,2000,200000,1.31,"Milchtopia","topiaID");
 milchwolke= new Milchproduktion(0,7500,750000,1.32,"Milchwolke","wolkeID");
 milchterie= new Milchproduktion(0,15000,1500000,1.33,"Dunkle Milchterie","terieID");
 */
-
 let milkAchieve=[
     einKMilch= new Achievements(1000,"1kMilch"),
     zweiKMilch= new Achievements(2000,"2kMilch")

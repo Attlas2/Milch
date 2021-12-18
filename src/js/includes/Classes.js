@@ -3,7 +3,6 @@ class Milchproduktion {
     number;
     mps;
     cost;
-
     costMulti;
     id;
     timeId;
@@ -32,7 +31,7 @@ class Milchproduktion {
             }
 
             this.number+=this.upgrade;
-            this.timeId=setInterval(addMilk, 1000,this.mps*this.number);
+            this.timeId=setInterval(addMilk, 200,(this.mps/5)*this.number*this.upgrade);
             this.cost*=this.costMulti;
             totalMps+=this.mps;
             //document.getElementById("mpscounter").innerHTML = Math.round(totalMps*10)/10+" MPS";
@@ -45,6 +44,9 @@ class Milchproduktion {
 
         }
     }
+    upgrade(multi){
+        this.upgrade*=multi;
+    }
     load(price,count){
         if(count>0){
             this.cost=price/this.costMulti;
@@ -53,15 +55,6 @@ class Milchproduktion {
             totalMps-=this.mps;
             this.add();
         }
-
-        /*
-        bauer.cost=saveStats.bauerKosten/bauer.costMulti;
-        milk=saveStats.Milsch+bauer.cost;
-        bauer.number=saveStats.bauerAnzahl-1;
-        totalMps=saveStats.MPS-bauer.mps;
-        bauer.add();
-        */
-
     }
 
 }

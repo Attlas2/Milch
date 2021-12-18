@@ -2,10 +2,10 @@ function init(){
     if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }
-    document.getElementById("ma_klicker").addEventListener("click",ev =>  addMilk(1));
-    document.getElementById("m_save").addEventListener("click",ev=> saveGame());
-    document.getElementById("m_export").addEventListener("click,",ev =>exportieren());
-    document.getElementById("m_load").addEventListener("click,",ev =>importieren());
+    document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(clickStrength));
+    document.getElementById("m_save").addEventListener("click", saveGame);
+    document.getElementById("m_export").addEventListener("click",exportieren);
+    document.getElementById("m_load").addEventListener("click",importieren);
     document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
     document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
     document.getElementById("kuhweideID").addEventListener("click",ev=> kuhweide.add());
@@ -26,6 +26,9 @@ function addMilk(x) {
     roundCurrency("ma_currentMilk",milk);
     checkMilkAchieve();
     checkProductionAchievements();
+}
+function upgradeClick(multi){
+    clickStrength*=multi;
 }
 
 function checkMilkAchieve(){
@@ -84,7 +87,6 @@ function loadGame() {
         milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
         milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
 
-
 }
 function roundCurrency(id,currency){
 
@@ -117,12 +119,6 @@ function exportieren (){
 }
 function importieren(){
    localStorage.setItem('Speicherstand',prompt("Fügen Sie den Speichercode ein!!!"));
+    location.reload();
 }
-
-
-
-
-
-
-
 

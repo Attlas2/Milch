@@ -351,6 +351,34 @@ Main Part
   font-size: 1.8rem;
 }
 
+#ma_klicksEffect .klickEffect {
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  font-family: AmaticSC, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0px 0px 4px black;
+  animation-name: klickEffect;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes klickEffect {
+  0% {
+    opacity: 1;
+    top: var(--top);
+    left: var(--left);
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    top: calc(var(--top) - 5%);
+    left: var(--left);
+  }
+}
 #ma_klicker {
   margin-top: 5%;
   background: url("../assets/img/ui_assets/main/clicker_background.png") no-repeat center;
@@ -358,8 +386,10 @@ Main Part
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 #ma_klicker #ma_klick {
+  user-select: none;
   min-width: 95%;
 }
 #ma_klicker .klickDown {

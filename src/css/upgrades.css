@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "AmaticSC";
+  src: url(../assets/font/AmaticSC-Bold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "AmaticSC";
+  src: url(../assets/font/AmaticSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "HoltwoodOneSC";
+  src: url(../assets/font/HoltwoodOneSC-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/*
+#################################################
+Upgrades Part
+#################################################
+ */
+#s_upgrades {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#u_book {
+  position: absolute;
+  width: 65%;
+  left: 17.5%;
+  top: 2%;
+}
+
+#u_header {
+  position: absolute;
+  width: 28%;
+  height: 6.5vw;
+  left: 36%;
+  top: 1%;
+  background: url("../assets/img/ui_assets/upgrades/titleBanner.png") center;
+  background-size: 100% 100%;
+}
+#u_header h1 {
+  position: relative;
+  top: -0.3vw;
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ebc28d;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+#u_closeButton {
+  position: absolute;
+  border: 0;
+  left: 79.5%;
+  top: 1%;
+  width: 4vw;
+  height: 4vw;
+  background: url("../assets/img/ui_assets/upgrades/closeButton.png") center;
+  background-size: 100% 100%;
+}
+
+/*# sourceMappingURL=upgrades.css.map */

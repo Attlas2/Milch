@@ -1,0 +1,109 @@
+@import "globals";
+/*
+#################################################
+Shop Part
+#################################################
+ */
+
+#s_shop {
+  background: url("../assets/img/ui_assets/shop/background.png") no-repeat center;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div#sh_items, div#sh_logo {
+    margin-left: 8%;
+  }
+
+  #sh_logo {
+    width: 77%;
+    height: 11%;
+  }
+
+  #sh_items {
+    width: 77%;
+    height: 82%;
+  }
+}
+
+#sh_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/img/ui_assets/shop/logo_background.png") no-repeat center;
+  background-size: 100% 100%;
+
+  span {
+    @include header(false);
+    font-size: 2.5rem;
+  }
+
+}
+
+#sh_items {
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 2%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sh_item {
+  width: 100%;
+  height: 14%;
+  margin-bottom: 6%;
+
+  background: url("../assets/img/ui_assets/shop/item_background.png") no-repeat center;
+  background-size: 100% 100%;
+
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  gap: 0 0;
+  grid-template-areas:
+    "img content";
+
+  @include text();
+
+  .sh_item_img {
+    position: relative;
+    grid-area: img;
+
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .sh_item_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    grid-area: content;
+  }
+
+  .sh_item_name {
+    position: relative;
+    top: 12%;
+  }
+
+  .sh_item_cost {
+    position: relative;
+    top: -12%;
+  }
+
+  .sh_item_count {
+    z-index: 1;
+    margin-right: 10%;
+    text-align: right;
+  }
+}

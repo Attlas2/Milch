@@ -7,18 +7,38 @@ function init(){
     document.getElementById("m_save").addEventListener("click", saveGame);
     document.getElementById("m_export").addEventListener("click",exportieren);
     document.getElementById("m_load").addEventListener("click",importieren);
-    document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
-    document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
+    document.getElementById("bauerID").addEventListener("click",function (){
+        bauer.add();
+        document.getElementsByClassName("sh_baum")[0-4].hidden=false;
+    });
+    document.getElementById("baumID").addEventListener("click",function(){
+        milchbaum.add();
+    });
     document.getElementById("kuhweideID").addEventListener("click",ev=> kuhweide.add());
     document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
-    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add());
+    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmaschine.add());
     document.getElementById("lkwID").addEventListener("click",ev=> milchLKW.add());
     document.getElementById("fabrikID").addEventListener("click",cv=>milchfabrik.add())
     document.getElementById("turmID").addEventListener("click",ev=> milchturm.add());
     document.getElementById("mieneID").addEventListener("click",ev=> milchmienen.add());
     document.getElementById("leitungID").addEventListener("click",ev=> milchleitung.add());
     document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
-    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmachine.add())
+    document.getElementById("saugmachineID").addEventListener("click",ev=> saugmaschine.add());
+    document.getElementById("m_upgrades").addEventListener("click",function (){
+        document.getElementById("s_upgrades").hidden=false
+    });
+    document.getElementById("u_upgrades")
+    document.getElementById("u_closeButton").addEventListener("click",function (){
+        document.getElementById("s_upgrades").hidden=true
+    })
+    document.getElementById("u_2xClick").addEventListener("click",ev=>upgradeClick(2,100));
+    document.getElementById("u_5xClick").addEventListener("click",ev=>upgradeClick(5,500));
+    document.getElementById("u_10xClick").addEventListener("click",ev=>upgradeClick(10,1000));
+    document.getElementById("u_20xClick").addEventListener("click",ev=>upgradeClick(20,5000));
+    document.getElementById("u_40xClick").addEventListener("click",ev=>upgradeClick(40,7000));
+    document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,10000));
+    document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,12500));
+
 }
 
 function addMilk(x) {
@@ -28,8 +48,14 @@ function addMilk(x) {
     checkMilkAchieve();
     checkProductionAchievements();
 }
-function upgradeClick(multi){
-    clickStrength*=multi;
+function upgradeClick(multi,cost){
+    if(multi>clickStrength){
+        if(cost<=milk){
+            clickStrength*=multi;
+            milk-=cost+clickStrength;
+            addMilk(clickStrength);
+        }
+    }
 }
 
 function checkMilkAchieve(){
@@ -38,10 +64,18 @@ function checkMilkAchieve(){
     }
 }
 function checkProductionAchievements(){
-    for(let i=0;i < productionAchieve.length;i++) {
-        zehnBauern.checkStone(bauer.number);
-        fuenfHoefe.checkStone(bauernhof.number);
-    }
+   fuenfzigBauern.checkStone(bauer.number);
+    fuenfzigBaum.checkStone(milchbaum.number);
+    fuenfzigWeide.checkStone(kuhweide.number);
+    fuenfzigHof.checkStone(bauernhof.number);
+    fuenfzigSaugmaschine.checkStone(saugmaschine.number);
+    fuenfzigLkw.checkStone(milchLKW.number);
+    fuenfzigFabrik.checkStone(milchfabrik.number);
+    fuenfzigTurm.checkStone(milchturm.number);
+    fuenfzigMinen.checkStone(milchmienen.number);
+    fuenfzigLeitung.checkStone(milchleitung.number);
+
+
 }
 
 function saveGame(){
@@ -56,8 +90,8 @@ function saveGame(){
         'kuhweideAnzahl':kuhweide.number,
         'bauernhofKosten':bauernhof.cost,
         'bauernhofAnzahl':bauernhof.number,
-        'saugmachineKosten':saugmachine.cost,
-        'saugmachineAnzahl':saugmachine.number,
+        'saugmachineKosten':saugmaschine.cost,
+        'saugmachineAnzahl':saugmaschine.number,
         'milchLKWKosten':milchLKW.cost,
         'milchLKWAnzahl':milchLKW.number,
         'milchfabrikKosten':milchfabrik.cost,
@@ -68,6 +102,15 @@ function saveGame(){
         'milchmienenAnzahl':milchmienen.number,
         'milchleitungKosten':milchleitung.cost,
         'milchleitungAnzahl':milchleitung.number,
+        'milkachieve10':zehnMilch.achieved,
+        'milkachieve50':fuenfzigMilch.achieved,
+        'milkachieve100':hundertMilch.achieved,
+        'milkachieve500':fuenfhundertMilch.achieved,
+        'milkachieve1000':tausendMilch.achieved,
+        'milkachieve5000':fuenftausendMilch.achieved,
+        'milkachieve10000':zehntausendMilch.achieved,
+        'milkachieve50000':fuenfzigtausendMilch.achieved,
+
     }
     const saveString=btoa(JSON.stringify(saves))
     localStorage.setItem('Speicherstand',saveString)
@@ -81,16 +124,15 @@ function loadGame() {
         milchbaum.load(saveStats.milchbaumKosten, saveStats.milchbaumAnzahl);
         kuhweide.load(saveStats.kuhweideKosten, saveStats.kuhweideAnzahl);
         bauernhof.load(saveStats.bauernhofKosten, saveStats.bauernhofAnzahl);
-        saugmachine.load(saveStats.saugmachineKosten, saveStats.saugmachineAnzahl);
+        saugmaschine.load(saveStats.saugmachineKosten, saveStats.saugmachineAnzahl);
         milchLKW.load(saveStats.milchLKWKosten, saveStats.milchLKWAnzahl);
         milchfabrik.load(saveStats.milchfabrikKosten, saveStats.milchfabrikAnzahl);
         milchturm.load(saveStats.milchturmKosten, saveStats.milchturmAnzahl);
         milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
         milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
-
+        zehnMilch.loadAchieve(saveStats.milkachieve10);
 }
 function roundCurrency(id,currency){
-
     if(currency>=1000){
         document.getElementById(id).innerHTML=(Math.round(currency/10)/100).toFixed(2)+"K "
     }
@@ -103,7 +145,6 @@ function roundCurrency(id,currency){
 
 }
 function roundCost(id,clas,currency,exString) {
-
     if (currency >= 1000) {
         document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 100) / 10 + "K " + exString
     }
@@ -114,6 +155,7 @@ function roundCost(id,clas,currency,exString) {
         document.getElementById(id).getElementsByClassName(clas)[0].innerHTML = Math.round(currency / 10000000) / 10 + "B " + exString
     }
 }
+
 function exportieren (){
     saveGame();
     prompt("Kopiere den Speichercode!!!",localStorage.getItem('Speicherstand'))
@@ -123,8 +165,11 @@ function importieren(){
         if(atob(promptValue).includes('Milch')) {
             localStorage.setItem('Speicherstand', promptValue);
             location.reload();
+        }else
+        {
+            alert("Ungültiger Code.")
         }
-
-
 }
+
+
 

@@ -10,13 +10,14 @@ class Milchproduktion {
     upgrade;
 
 
-    constructor(number, mps, cost,costMulti, name,id,timeId,klasse) {
+    constructor(number, mps, cost,costMulti, name,id,cssID,timeId,klasse) {
         this.number = number;
         this.mps = mps;
         this.cost = cost;
         this.costMulti=costMulti;
         this.name =name;
         this.id =id;
+        this.cssID= cssID;
         this.timeId=timeId;
         this.klasse="Milchproduktion";
         this.upgrade=1;
@@ -39,6 +40,9 @@ class Milchproduktion {
             document.getElementById(this.id).getElementsByClassName("sh_item_cost")[0].innerHTML = Math.round(this.cost*100)/100+"<span class=\"currency\">M</span>";
             roundCost(this.id,"sh_item_cost",this.cost, "<span class=\"currency\">M</span>")
             roundCost(this.id,"sh_item_count",this.number,"")
+            if(document.getElementById(this.cssID).hidden){
+                document.getElementById(this.cssID).hidden=false;
+            }
 
 
 
@@ -81,7 +85,12 @@ class Achievements{
                 document.getElementById(this.id).innerHTML=this.message
             }
         }
-
+    }
+    loadAchieve(a){
+        if(a){
+            document.getElementById(this.klasse).style.background = "url(../src/assets/img/ui_assets/main/clicker.png)" // Hier den Pfad von dem anderen Bild.
+            document.getElementById(this.id).innerHTML=this.message
+        }
     }
 }
 

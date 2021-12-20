@@ -119,7 +119,12 @@ function exportieren (){
     prompt("Kopiere den Speichercode!!!",localStorage.getItem('Speicherstand'))
 }
 function importieren(){
-   localStorage.setItem('Speicherstand',prompt("Fügen Sie den Speichercode ein!!!"));
-    location.reload();
+        let promptValue = prompt("Fügen Sie den Speichercode ein!!!")
+        if(atob(promptValue).includes('Milch')) {
+            localStorage.setItem('Speicherstand', promptValue);
+            location.reload();
+        }
+
+
 }
 

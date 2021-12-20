@@ -44,7 +44,7 @@ class Milchproduktion {
 
         }
     }
-    upgrade(multi){
+    upgrading(multi){
         this.upgrade*=multi;
     }
     load(price,count){
@@ -61,18 +61,27 @@ class Milchproduktion {
 class Achievements{
     milestone;
     id;
-    achieved;
     klasse;
-    constructor(milestone,id,achieved,klasse) {
+    message;
+    achieved;
+
+    constructor(milestone,id,klasse,message,) {
         this.milestone=milestone;
         this.id=id;
+        this.klasse=klasse;
+        this.message=message;
         this.achieved=false;
-        this.klasse="Achievements"
+
     }
     checkStone(x){
-    if(x>=this.milestone){
-        this.achieved=true;
+        if(!this.achieved){
+            if(x>=this.milestone){
+                this.achieved=true;
+                document.getElementById(this.klasse).style.background = "url(../src/assets/img/ui_assets/main/clicker.png)" // Hier den Pfad von dem anderen Bild.
+                document.getElementById(this.id).innerHTML=this.message
+            }
         }
+
     }
 }
 

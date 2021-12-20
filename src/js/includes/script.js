@@ -1,19 +1,16 @@
 function init(){
     styleInit();
+
     if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }
+    setInterval(saveGame,30000);
     document.getElementById("ma_klicker").addEventListener("click",ev=> addMilk(clickStrength));
     document.getElementById("m_save").addEventListener("click", saveGame);
     document.getElementById("m_export").addEventListener("click",exportieren);
     document.getElementById("m_load").addEventListener("click",importieren);
-    document.getElementById("bauerID").addEventListener("click",function (){
-        bauer.add();
-        document.getElementsByClassName("sh_baum")[0-4].hidden=false;
-    });
-    document.getElementById("baumID").addEventListener("click",function(){
-        milchbaum.add();
-    });
+    document.getElementById("bauerID").addEventListener("click",ev=>bauer.add());
+    document.getElementById("baumID").addEventListener("click",ev=> milchbaum.add());
     document.getElementById("kuhweideID").addEventListener("click",ev=> kuhweide.add());
     document.getElementById("bauernhofID").addEventListener("click",ev=> bauernhof.add());
     document.getElementById("saugmachineID").addEventListener("click",ev=> saugmaschine.add());

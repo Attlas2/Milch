@@ -4,16 +4,16 @@ let totalMps=0;
 let clickStrength =1;
 let saves;
 
-bauer = new Milchproduktion(0,0.1,10,1.28,"Bauer","bauerID","ma_bauer");
-milchbaum= new Milchproduktion(0,0.5,50,1.26,"Milchbaum","baumID","ma_baum");
-kuhweide= new Milchproduktion(0,1,100,1.24,"Kuhweide","kuhweideID","ma_weide");
-bauernhof= new Milchproduktion(0,5,500,1.22,"Bauernhof","bauernhofID","ma_bauernhof");
-saugmaschine= new Milchproduktion(0,10,1000,1.2,"Saugmachine","saugmachineID","ma_maschine");
-milchLKW= new Milchproduktion(0,25,2500,1.18,"Milch LKW","lkwID","ma_lkw");
-milchfabrik= new Milchproduktion(0,50,5000,1.16,"Milchfabrik","fabrikID","ma_fabrik");
-milchturm= new Milchproduktion(0,75,7500,1.14,"Milchturm","turmID","ma_turm");
-milchmienen= new Milchproduktion(0,100,10000,1.12,"Milchmiene","mieneID","ma_minen");
-milchleitung= new Milchproduktion(0,150,15000,1.1,"Milchleitung","leitungID","ma_leitung");
+bauer = new Milchproduktion(0,0.1,10,1.28,"Bauer","bauerID","ma_bauer","baumID");
+milchbaum= new Milchproduktion(0,0.5,50,1.26,"Milchbaum","baumID","ma_baum","kuhweideID");
+kuhweide= new Milchproduktion(0,1,100,1.24,"Kuhweide","kuhweideID","ma_weide","bauernhofID");
+bauernhof= new Milchproduktion(0,5,500,1.22,"Bauernhof","bauernhofID","ma_bauernhof","saugmachineID");
+saugmaschine= new Milchproduktion(0,10,1000,1.2,"Saugmachine","saugmachineID","ma_maschine","lkwID");
+milchLKW= new Milchproduktion(0,25,2500,1.18,"Milch LKW","lkwID","ma_lkw","fabrikID");
+milchfabrik= new Milchproduktion(0,50,5000,1.16,"Milchfabrik","fabrikID","ma_fabrik","turmID");
+milchturm= new Milchproduktion(0,75,7500,1.14,"Milchturm","turmID","ma_turm","mieneID");
+milchmienen= new Milchproduktion(0,100,10000,1.12,"Milchmiene","mieneID","ma_minen","leitungID");
+milchleitung= new Milchproduktion(0,150,15000,1.1,"Milchleitung","leitungID","ma_leitung",null);
 /*
 milchmanufaktur= new Milchproduktion(0,200,20000,1,26,"Milchmanufaktur","manufakturID");
 milchkratzer= new Milchproduktion(0,250,25000,1.27,"Milchkratzer","kratzerID");

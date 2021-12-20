@@ -6,11 +6,11 @@ class Milchproduktion {
     costMulti;
     id;
     timeId;
-    klasse;
     upgrade;
+    nextID
 
 
-    constructor(number, mps, cost,costMulti, name,id,cssID,timeId,klasse) {
+    constructor(number, mps, cost,costMulti, name,id,cssID,nextID,timeId) {
         this.number = number;
         this.mps = mps;
         this.cost = cost;
@@ -19,7 +19,7 @@ class Milchproduktion {
         this.id =id;
         this.cssID= cssID;
         this.timeId=timeId;
-        this.klasse="Milchproduktion";
+        this.nextID=nextID;
         this.upgrade=1;
 
     }
@@ -27,7 +27,7 @@ class Milchproduktion {
         if (milk >= this.cost) {
             milk -= this.cost;
 
-            if(this.number!=0){
+            if(this.number!==0){
                 clearInterval(this.timeId);
             }
 
@@ -43,6 +43,10 @@ class Milchproduktion {
             if(document.getElementById(this.cssID).hidden){
                 document.getElementById(this.cssID).hidden=false;
             }
+            if(this.nextID!==null){
+                document.getElementById(this.nextID).classList.remove("sh_item_hidden");
+            }
+
 
 
 

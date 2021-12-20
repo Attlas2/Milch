@@ -67,4 +67,60 @@ Upgrades Part
   background-size: 100% 100%;
 }
 
+#u_content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  left: 20vw;
+  top: 8vw;
+  width: 59.5vw;
+  height: 37vw;
+}
+#u_content .u_upgradePath {
+  width: 50%;
+  height: 20%;
+}
+#u_content .u_upgradePath h2 {
+  font-family: HoltwoodOneSC, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ebc28d;
+  color: #6B4615;
+  margin: 0;
+}
+#u_content .u_upgradePath .u_upgrades {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#u_content .u_upgradePath .u_upgrades .u_upgrade {
+  font-family: AmaticSC, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: auto;
+  text-align: center;
+  height: 100%;
+  user-select: none;
+  min-width: 15%;
+}
+#u_content .u_upgradePath .u_upgrades .u_toSell {
+  background: url("../assets/img/ui_assets/upgrades/frame_blue.png") center no-repeat;
+  background-size: contain;
+}
+#u_content .u_upgradePath .u_upgrades .u_bought {
+  background: url("../assets/img/ui_assets/upgrades/frame_green.png") center no-repeat;
+  background-size: contain;
+}
+
 /*# sourceMappingURL=upgrades.css.map */

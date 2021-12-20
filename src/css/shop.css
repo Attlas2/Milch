@@ -51,10 +51,10 @@ Shop Part
 #sh_logo span {
   font-family: HoltwoodOneSC, sans-serif;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-align: center;
   color: #ebc28d;
-  font-size: 2.5rem;
+  font-size: 2.5vw;
 }
 
 #sh_items {
@@ -84,7 +84,7 @@ Shop Part
   grid-template-areas: "img content";
   font-family: AmaticSC, sans-serif;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-align: left;
   color: #fff;
 }

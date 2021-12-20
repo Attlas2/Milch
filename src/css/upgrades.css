@@ -47,13 +47,14 @@ Upgrades Part
 }
 #u_header h1 {
   position: relative;
-  top: -0.3vw;
+  top: 0.8vw;
   font-family: HoltwoodOneSC, sans-serif;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-align: center;
   color: #ebc28d;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  margin: 0;
 }
 
 #u_closeButton {
@@ -86,7 +87,7 @@ Upgrades Part
 #u_content .u_upgradePath h2 {
   font-family: HoltwoodOneSC, sans-serif;
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-align: center;
   color: #ebc28d;
   color: #6B4615;
@@ -102,7 +103,7 @@ Upgrades Part
 #u_content .u_upgradePath .u_upgrades .u_upgrade {
   font-family: AmaticSC, sans-serif;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-align: left;
   color: #fff;
   display: flex;

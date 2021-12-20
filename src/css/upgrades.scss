@@ -31,8 +31,9 @@ Upgrades Part
   background-size: 100% 100%;
   h1{
     position: relative;
-    top: -0.3vw;
-    @include header(true)
+    top: 0.8vw;
+    @include header(true);
+    margin: 0;
   }
 }
 

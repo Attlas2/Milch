@@ -5,9 +5,6 @@ let clickStrength =1;
 let saves;
 const ClickUpgrade=[2,5,10,20,40,80,125];
 
-
-
-
 bauer = new Milchproduktion(0,0.1,10,1.2,"Bauer","bauerID","ma_bauer","baumID");
 milchbaum= new Milchproduktion(0,0.5,100,1.15,"Milchbaum","baumID","ma_baum","kuhweideID");
 kuhweide= new Milchproduktion(0,1,1100,1.15,"Kuhweide","kuhweideID","ma_weide","bauernhofID");
@@ -37,19 +34,19 @@ let milkAchieve=[
     fuenftausendMilch= new Achievements(5000,"5000Milch","milkAchievement_5000","5000 Milch!"),
     zehntausendMilch= new Achievements(10000,"10000Milch","milkAchievement_10000","10000 Milch!"),
     fuenfzigtausendMilch= new Achievements(50000,"50000Milch","milkAchievement_50000","50000 Milch!"),
-
 ]
 
-fuenfzigBauern = new Achievements(50,"50Bauern","50BauerKlasse","50 Bauern!");
-fuenfzigBaum = new Achievements(50,"50Baume","50BaumKlasse","50 Bäume!");
-fuenfzigWeide = new Achievements(50,"50Weide","50WeideKlasse","50 Weiden!");
-fuenfzigHof = new Achievements(50,"50Hof","50HofKlasse");
-fuenfzigSaugmaschine = new Achievements(50,"50Saugmaschine","50SaugmaschineKlasse","50 Saugmaschinen!");
-fuenfzigLkw = new Achievements(50,"50LKW","50LkwKlasse","50 LKW\n's!");
-fuenfzigFabrik = new Achievements(50,"50Fabrik","50FabrikKlasse","50 Fabriken!");
-fuenfzigTurm = new Achievements(50,"50Turm","50TurmKlasse","50 Türme!");
-fuenfzigMinen = new Achievements(50,"50Minen","50MinenKlasse","50 Minen!");
-fuenfzigLeitung = new Achievements(50,"50Leitung","50LeitungKlasse","50 Leitungen!");
+fuenfzigBauern = new Achievements(15,"50Bauern","50BauerKlasse","15 Bauern!");
+fuenfzigBaum = new Achievements(15,"50Baume","50BaumKlasse","15 Bäume!");
+fuenfzigWeide = new Achievements(15,"50Weide","50WeideKlasse","15 Weiden!");
+fuenfzigHof = new Achievements(15,"50Hof","50HofKlasse");
+fuenfzigSaugmaschine = new Achievements(15,"50Saugmaschine","50SaugmaschineKlasse","15 Saugmaschinen!");
+fuenfzigLkw = new Achievements(15,"50LKW","50LkwKlasse","15 LKW\n's!");
+fuenfzigFabrik = new Achievements(15,"50Fabrik","50FabrikKlasse","15 Fabriken!");
+fuenfzigTurm = new Achievements(15,"50Turm","50TurmKlasse","15 Türme!");
+fuenfzigMinen = new Achievements(15,"50Minen","50MinenKlasse","15 Minen!");
+fuenfzigLeitung = new Achievements(15,"50Leitung","50LeitungKlasse","15 Leitungen!");
+
 
 
 

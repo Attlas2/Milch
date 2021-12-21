@@ -180,6 +180,7 @@ Main Part
   }
 }
 #ma_klicker {
+  cursor: crosshair;
   margin-top: 5%;
   background: url("../assets/img/ui_assets/main/clicker_background.png") no-repeat center;
   background-size: cover;

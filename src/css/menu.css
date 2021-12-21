@@ -57,14 +57,17 @@ Menu Part
   background: url("../assets/img/ui_assets/menu/menu_button_stats.png") no-repeat center;
   background-size: contain;
   margin-left: -15px;
+  cursor: not-allowed;
 }
 #m_top #m_news {
   background: url("../assets/img/ui_assets/menu/menu_button_news.png") no-repeat center;
   background-size: contain;
+  cursor: not-allowed;
 }
 #m_top #m_settings {
   background: url("../assets/img/ui_assets/menu/menu_button_settings.png") no-repeat center;
   background-size: contain;
+  cursor: not-allowed;
 }
 
 #m_main {
@@ -121,6 +124,7 @@ Menu Part
   background-size: 100% 100%;
 }
 #m_main #m_upgrades {
+  cursor: pointer;
   margin-top: 20px;
   font-family: HoltwoodOneSC, sans-serif;
   font-weight: normal;
@@ -156,6 +160,7 @@ Menu Part
   margin: -30px 0 0 0;
 }
 #m_bottom #m_saveButtons button {
+  cursor: pointer;
   width: 42%;
   margin: 0 5px;
   background: url("../assets/img/ui_assets/menu/menu_button_background_small.png") no-repeat center;
@@ -165,6 +170,7 @@ Menu Part
   background: url("../assets/img/ui_assets/menu/menu_button_background_large.png") no-repeat center;
   background-size: 100% 80%;
   width: 88%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=menu.css.map */

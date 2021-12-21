@@ -1,6 +1,7 @@
 function init(){
     styleInit();
 
+
     if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }
@@ -36,6 +37,9 @@ function init(){
     document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,13000,"u_80xClick"));
     document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,18000,"u_125xClick"));
 
+    document.getElementById("s_audio").volume = 0.1;
+    document.getElementById("s_audio").autoplay;
+    document.getElementById("s_audio").play();
 }
 
 function addMilk(x) {

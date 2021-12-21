@@ -28,13 +28,13 @@ function init(){
     document.getElementById("u_closeButton").addEventListener("click",function (){
         document.getElementById("s_upgrades").hidden=true
     })
-    document.getElementById("u_2xClick").addEventListener("click",ev=>upgradeClick(2,100));
-    document.getElementById("u_5xClick").addEventListener("click",ev=>upgradeClick(5,500));
-    document.getElementById("u_10xClick").addEventListener("click",ev=>upgradeClick(10,1000));
-    document.getElementById("u_20xClick").addEventListener("click",ev=>upgradeClick(20,5000));
-    document.getElementById("u_40xClick").addEventListener("click",ev=>upgradeClick(40,7000));
-    document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,10000));
-    document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,12500));
+    document.getElementById("u_2xClick").addEventListener("click",ev=>upgradeClick(2,100,"u_2xClick"));
+    document.getElementById("u_5xClick").addEventListener("click",ev=>upgradeClick(5,500,"u_5xClick"));
+    document.getElementById("u_10xClick").addEventListener("click",ev=>upgradeClick(10,1000,"u_10xClick"));
+    document.getElementById("u_20xClick").addEventListener("click",ev=>upgradeClick(20,5000,"u_20xClick"));
+    document.getElementById("u_40xClick").addEventListener("click",ev=>upgradeClick(40,7000,"u_40xClick"));
+    document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,10000,"u_80xClick"));
+    document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,12500,"u_125xClick"));
 
 }
 
@@ -45,12 +45,15 @@ function addMilk(x) {
     checkMilkAchieve();
     checkProductionAchievements();
 }
-function upgradeClick(multi,cost){
+function upgradeClick(multi,cost,id){
     if(multi>clickStrength){
         if(cost<=milk){
-            clickStrength*=multi;
+
+            clickStrength=multi;
             milk-=cost+clickStrength;
             addMilk(clickStrength);
+            document.getElementById(id).classList.remove("u_toSell");
+            document.getElementById(id).classList.add("u_bought");
         }
     }
 }
@@ -107,6 +110,7 @@ function saveGame(){
         'milkachieve5000':fuenftausendMilch.achieved,
         'milkachieve10000':zehntausendMilch.achieved,
         'milkachieve50000':fuenfzigtausendMilch.achieved,
+        'klickstaerke':clickStrength
 
     }
     const saveString=btoa(JSON.stringify(saves))
@@ -128,6 +132,14 @@ function loadGame() {
         milchmienen.load(saveStats.milchmienenKosten, saveStats.milchmienenAnzahl);
         milchleitung.load(saveStats.milchleitungKosten, saveStats.milchleitungAnzahl);
         zehnMilch.loadAchieve(saveStats.milkachieve10);
+        fuenfzigMilch.loadAchieve(saveStats.milkachieve50);
+        hundertMilch.loadAchieve(saveStats.milkachieve100);
+        fuenfhundertMilch.loadAchieve(saveStats.milkachieve500);
+        tausendMilch.loadAchieve(saveStats.milkachieve1000);
+        fuenftausendMilch.loadAchieve(saveStats.milkachieve5000);
+        zehntausendMilch.loadAchieve(saveStats.milkachieve10000);
+        fuenfzigtausendMilch.loadAchieve(saveStats.milkachieve50000);
+        loadClickstrenght(saveStats.klickstaerke);
 }
 function roundCurrency(id,currency){
     if(currency>=1000){
@@ -166,6 +178,15 @@ function importieren(){
         {
             alert("Ungültiger Code.")
         }
+}
+function loadClickstrenght(x){
+    clickStrength=x;
+    for(let i=0;i<ClickUpgrade.length,i++;){
+       if(clickStrength>ClickUpgrade[i]){
+           document.getElementById("u_"+ClickUpgrade[i]+"xClick").classList.remove("u_toSell");
+           document.getElementById("u_"+ClickUpgrade[i]+"xClick").classList.add("u_bought");
+       }
+    }
 }
 
 

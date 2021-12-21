@@ -3,6 +3,10 @@ let milk=0;
 let totalMps=0;
 let clickStrength =1;
 let saves;
+const ClickUpgrade=[2,5,10,20,40,80,125];
+
+
+
 
 bauer = new Milchproduktion(0,0.1,10,1.28,"Bauer","bauerID","ma_bauer","baumID");
 milchbaum= new Milchproduktion(0,0.5,50,1.26,"Milchbaum","baumID","ma_baum","kuhweideID");

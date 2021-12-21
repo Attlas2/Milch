@@ -8,16 +8,16 @@ const ClickUpgrade=[2,5,10,20,40,80,125];
 
 
 
-bauer = new Milchproduktion(0,0.1,10,1.28,"Bauer","bauerID","ma_bauer","baumID");
-milchbaum= new Milchproduktion(0,0.5,50,1.26,"Milchbaum","baumID","ma_baum","kuhweideID");
-kuhweide= new Milchproduktion(0,1,100,1.24,"Kuhweide","kuhweideID","ma_weide","bauernhofID");
-bauernhof= new Milchproduktion(0,5,500,1.22,"Bauernhof","bauernhofID","ma_bauernhof","saugmachineID");
-saugmaschine= new Milchproduktion(0,10,1000,1.2,"Saugmachine","saugmachineID","ma_maschine","lkwID");
-milchLKW= new Milchproduktion(0,25,2500,1.18,"Milch LKW","lkwID","ma_lkw","fabrikID");
-milchfabrik= new Milchproduktion(0,50,5000,1.16,"Milchfabrik","fabrikID","ma_fabrik","turmID");
-milchturm= new Milchproduktion(0,75,7500,1.14,"Milchturm","turmID","ma_turm","mieneID");
-milchmienen= new Milchproduktion(0,100,10000,1.12,"Milchmiene","mieneID","ma_minen","leitungID");
-milchleitung= new Milchproduktion(0,150,15000,1.1,"Milchleitung","leitungID","ma_leitung",null);
+bauer = new Milchproduktion(0,0.1,10,1.2,"Bauer","bauerID","ma_bauer","baumID");
+milchbaum= new Milchproduktion(0,0.5,100,1.15,"Milchbaum","baumID","ma_baum","kuhweideID");
+kuhweide= new Milchproduktion(0,1,1100,1.15,"Kuhweide","kuhweideID","ma_weide","bauernhofID");
+bauernhof= new Milchproduktion(0,5,5200,1.15,"Bauernhof","bauernhofID","ma_bauernhof","saugmachineID");
+saugmaschine= new Milchproduktion(0,10,13000,1.15,"Saugmachine","saugmachineID","ma_maschine","lkwID");
+milchLKW= new Milchproduktion(0,25,80000,1.15,"Milch LKW","lkwID","ma_lkw","fabrikID");
+milchfabrik= new Milchproduktion(0,50,280000,1.15,"Milchfabrik","fabrikID","ma_fabrik","turmID");
+milchturm= new Milchproduktion(0,75,750000,1.15,"Milchturm","turmID","ma_turm","mieneID");
+milchmienen= new Milchproduktion(0,100,2500000,1.15,"Milchmiene","mieneID","ma_minen","leitungID");
+milchleitung= new Milchproduktion(0,150,8000000,1.15,"Milchleitung","leitungID","ma_leitung",null);
 /*
 milchmanufaktur= new Milchproduktion(0,200,20000,1,26,"Milchmanufaktur","manufakturID");
 milchkratzer= new Milchproduktion(0,250,25000,1.27,"Milchkratzer","kratzerID");

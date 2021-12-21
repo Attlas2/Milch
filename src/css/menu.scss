@@ -44,14 +44,17 @@ Menu Part
     background: url("../assets/img/ui_assets/menu/menu_button_stats.png") no-repeat center;
     background-size: contain;
     margin-left: -15px;
+    cursor: not-allowed;
   }
   #m_news{
     background: url("../assets/img/ui_assets/menu/menu_button_news.png") no-repeat center;
     background-size: contain;
+    cursor: not-allowed;
   }
   #m_settings{
     background: url("../assets/img/ui_assets/menu/menu_button_settings.png") no-repeat center;
     background-size: contain;
+    cursor: not-allowed;
   }
 }
 
@@ -106,6 +109,7 @@ Menu Part
 
   }
   #m_upgrades{
+    cursor: pointer;
     margin-top: 20px;
     @include header(false);
     border: 0;
@@ -133,6 +137,7 @@ Menu Part
     justify-content: center;
     margin: -30px 0 0 0;
     button{
+      cursor: pointer;
       width: 42%;
 
       margin: 0 5px;
@@ -145,6 +150,7 @@ Menu Part
     background: url("../assets/img/ui_assets/menu/menu_button_background_large.png") no-repeat center;
     background-size: 100% 80%;
     width: 88%;
+    cursor: pointer;
 
   }
 }

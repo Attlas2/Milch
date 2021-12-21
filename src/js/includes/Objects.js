@@ -29,14 +29,14 @@ milchwolke= new Milchproduktion(0,7500,750000,1.32,"Milchwolke","wolkeID");
 milchterie= new Milchproduktion(0,15000,1500000,1.33,"Dunkle Milchterie","terieID");
 */
 let milkAchieve=[
-    zehnMilch= new Achievements(10,"10Milch","milkAchievement_10","10 Milch!"),
-    fuenfzigMilch= new Achievements(50,"50Milch","milkAchievement_50","50 Milch!"),
-    hundertMilch= new Achievements(100,"100Milch","milkAchievement_100","100 Milch!"),
-    fuenfhundertMilch= new Achievements(500,"500Milch","milkAchievement_500","500 Milch!"),
-    tausendMilch= new Achievements(1000,"1000Milch","milkAchievement_1000","1000 Milch!"),
-    fuenftausendMilch= new Achievements(5000,"5000Milch","milkAchievement_5000","5000 Milch!"),
-    zehntausendMilch= new Achievements(10000,"10000Milch","milkAchievement_10000","10000 Milch!"),
-    fuenfzigtausendMilch= new Achievements(50000,"50000Milch","milkAchievement_50000","50000 Milch!"),
+    zehnMilch= new Achievements(100,"10Milch","milkAchievement_10","100 Milch!"),
+    fuenfzigMilch= new Achievements(1000,"50Milch","milkAchievement_50","1000 Milch!"),
+    hundertMilch= new Achievements(15000,"100Milch","milkAchievement_100","15000 Milch!"),
+    fuenfhundertMilch= new Achievements(50000,"500Milch","milkAchievement_500","50000 Milch!"),
+    tausendMilch= new Achievements(150000,"1000Milch","milkAchievement_1000","150000 Milch!"),
+    fuenftausendMilch= new Achievements(500000,"5000Milch","milkAchievement_5000","500000 Milch!"),
+    zehntausendMilch= new Achievements(1000000,"10000Milch","milkAchievement_10000","1000000 Milch!"),
+    fuenfzigtausendMilch= new Achievements(5000000,"50000Milch","milkAchievement_50000","5000000 Milch!"),
 
 ]
 

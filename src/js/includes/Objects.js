@@ -13,8 +13,8 @@ saugmaschine= new Milchproduktion(0,10,13000,1.15,"Saugmachine","saugmachineID",
 milchLKW= new Milchproduktion(0,25,80000,1.15,"Milch LKW","lkwID","ma_lkw","fabrikID");
 milchfabrik= new Milchproduktion(0,50,280000,1.15,"Milchfabrik","fabrikID","ma_fabrik","turmID");
 milchturm= new Milchproduktion(0,75,750000,1.15,"Milchturm","turmID","ma_turm","mieneID");
-milchmienen= new Milchproduktion(0,100,2500000,1.15,"Milchmiene","mieneID","ma_minen","leitungID");
-milchleitung= new Milchproduktion(0,150,8000000,1.15,"Milchleitung","leitungID","ma_leitung",null);
+milchmienen= new Milchproduktion(0,100,1500000,1.15,"Milchmiene","mieneID","ma_minen","leitungID");
+milchleitung= new Milchproduktion(0,150,3200000,1.15,"Milchleitung","leitungID","ma_leitung",null);
 /*
 milchmanufaktur= new Milchproduktion(0,200,20000,1,26,"Milchmanufaktur","manufakturID");
 milchkratzer= new Milchproduktion(0,250,25000,1.27,"Milchkratzer","kratzerID");

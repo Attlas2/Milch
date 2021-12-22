@@ -1,6 +1,7 @@
 function init(){
     styleInit();
 
+
     if (localStorage.getItem("Speicherstand")!==null) {
         loadGame()
     }
@@ -28,14 +29,15 @@ function init(){
     document.getElementById("u_closeButton").addEventListener("click",function (){
         document.getElementById("s_upgrades").hidden=true
     })
-    document.getElementById("u_2xClick").addEventListener("click",ev=>upgradeClick(2,100,"u_2xClick"));
-    document.getElementById("u_5xClick").addEventListener("click",ev=>upgradeClick(5,500,"u_5xClick"));
-    document.getElementById("u_10xClick").addEventListener("click",ev=>upgradeClick(10,1000,"u_10xClick"));
-    document.getElementById("u_20xClick").addEventListener("click",ev=>upgradeClick(20,5000,"u_20xClick"));
-    document.getElementById("u_40xClick").addEventListener("click",ev=>upgradeClick(40,7000,"u_40xClick"));
-    document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,10000,"u_80xClick"));
-    document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,12500,"u_125xClick"));
-    document.getElementById("s_audio").volume = 0.1;
+
+    document.getElementById("u_2xClick").addEventListener("click",ev=>upgradeClick(2,500,"u_2xClick"));
+    document.getElementById("u_5xClick").addEventListener("click",ev=>upgradeClick(5,1800,"u_5xClick"));
+    document.getElementById("u_10xClick").addEventListener("click",ev=>upgradeClick(10,2900,"u_10xClick"));
+    document.getElementById("u_20xClick").addEventListener("click",ev=>upgradeClick(20,5800,"u_20xClick"));
+    document.getElementById("u_40xClick").addEventListener("click",ev=>upgradeClick(40,7700,"u_40xClick"));
+    document.getElementById("u_80xClick").addEventListener("click",ev=>upgradeClick(80,13000,"u_80xClick"));
+    document.getElementById("u_125xClick").addEventListener("click",ev=>upgradeClick(125,18000,"u_125xClick"));
+    document.getElementById("s_audio").volume = 0;
     document.getElementById("s_audio").autoplay;
     document.getElementById("m_settings").addEventListener("click",function (){
         document.getElementById("s_audio").play();
@@ -71,6 +73,7 @@ function init(){
     document.getElementsByClassName("u_productUpgrades")[24].addEventListener("click",ev=>milchmienen.upgrading(2,50000,24));
     document.getElementsByClassName("u_productUpgrades")[25].addEventListener("click",ev=>milchmienen.upgrading(5,100000,25));
     document.getElementsByClassName("u_productUpgrades")[26].addEventListener("click",ev=>milchmienen.upgrading(10,150000,26));
+
 }
 
 function addMilk(x) {
@@ -144,6 +147,8 @@ function saveGame(){
         'milkachieve5000':fuenftausendMilch.achieved,
         'milkachieve10000':zehntausendMilch.achieved,
         'milkachieve50000':fuenfzigtausendMilch.achieved,
+        'milkachieve100000000':hundertMillionenMilch.achieved,
+        'milkachieve1000000000':milliardeMilch.achieved,
         'klickstaerke':clickStrength,
         'bauerUpgrade':bauer.upgrade,
         'baumUpgrade':milchbaum.upgrade,
@@ -182,6 +187,8 @@ function loadGame() {
         fuenftausendMilch.loadAchieve(saveStats.milkachieve5000);
         zehntausendMilch.loadAchieve(saveStats.milkachieve10000);
         fuenfzigtausendMilch.loadAchieve(saveStats.milkachieve50000);
+        hundertMillionenMilch.loadAchieve(saveStats.milkachieve100000000);
+        milliardeMilch.loadAchieve(saveStats.milkachieve1000000000);
         loadClickstrenght(saveStats.klickstaerke);
         loadUpgrade(0,saveStats.bauerUpgrade);
         bauer.upgrade=saveStats.bauerUpgrade;

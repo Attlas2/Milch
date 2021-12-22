@@ -12,6 +12,8 @@
         window.onload = init;
     </script>
 
+    <link rel="shortcut icon" href="../assets/img/icon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/shop.css">
@@ -26,11 +28,17 @@
         sh_.. = Für alles vom Shop
         u_..  = Für alles bezogen auf Upgrades
     -->
+    <audio autoplay loop id="s_audio">
+        <source src="../assets/audio/MoonshineTown_JR-Tundra.ogg" type="audio/ogg">
+        <source src="../assets/audio/MoonshineTown_JR-Tundra.mp3" type="audio/mpeg">
+    </audio>
     <section id="s_menu" >
         <div id="m_top">
             <button type="button" id="m_stats"></button>
             <button type="button" id="m_news"></button>
-            <button type="button" id="m_settings"></button>
+            <button type="button" id="m_settings" class="tooltip">
+                <span class="tooltiptext">enable/mute music</span>
+            </button>
         </div>
         <img src="../assets/img/ui_assets/menu/menu_frame_line.png" alt="Trennlinie zur Separierung" class="seperateLine">
         <div id="m_main">
@@ -92,11 +100,11 @@
                     <div class="m_achievement tooltip" id="50LeitungKlasse">
                         <span class="tooltiptext" id="50Leitung">???</span>
                     </div>
-                    <div class="m_achievement tooltip m_finalAchieve">
-                        <span class="tooltiptext">???</span>
+                    <div class="m_achievement tooltip" id="milkAchievement_100000000">
+                        <span class="tooltiptext" id="100000000Milch">???</span>
                     </div>
-                    <div class="m_achievement tooltip m_finalAchieve">
-                        <span class="tooltiptext">???</span>
+                    <div class="m_achievement tooltip" id="milkAchievement_1000000000">
+                        <span class="tooltiptext" id="1000000000Milch">???</span>
                     </div>
 
                 </div>
@@ -234,25 +242,25 @@
                 <h2>Klicks</h2>
                 <div class="u_upgrades">
                     <span class="u_upgrade u_toSell tooltip" id="u_2xClick">+2
-                        <span class="tooltiptext">100 <span class="currency">M</span></span>
-                    </span>
-                    <span class="u_upgrade u_toSell tooltip" id="u_5xClick">+5
                         <span class="tooltiptext">500 <span class="currency">M</span></span>
                     </span>
+                    <span class="u_upgrade u_toSell tooltip" id="u_5xClick">+5
+                        <span class="tooltiptext">1800 <span class="currency">M</span></span>
+                    </span>
                     <span class="u_upgrade u_toSell tooltip" id="u_10xClick">+10
-                        <span class="tooltiptext">1000 <span class="currency">M</span></span>
+                        <span class="tooltiptext">2900 <span class="currency">M</span></span>
                     </span>
                     <span class="u_upgrade u_toSell tooltip" id="u_20xClick">+20
-                        <span class="tooltiptext">5000 <span class="currency">M</span></span>
+                        <span class="tooltiptext">5800 <span class="currency">M</span></span>
                     </span>
                     <span class="u_upgrade u_toSell tooltip" id="u_40xClick">+40
-                        <span class="tooltiptext">7000 <span class="currency">M</span></span>
+                        <span class="tooltiptext">7700 <span class="currency">M</span></span>
                     </span>
                     <span class="u_upgrade u_toSell tooltip" id="u_80xClick">+80
-                        <span class="tooltiptext">10000 <span class="currency">M</span></span>
+                        <span class="tooltiptext">13000 <span class="currency">M</span></span>
                     </span>
                     <span class="u_upgrade u_toSell tooltip" id="u_125xClick">+125
-                        <span class="tooltiptext">12500 <span class="currency">M</span></span>
+                        <span class="tooltiptext">18000 <span class="currency">M</span></span>
                     </span>
 
                 </div>

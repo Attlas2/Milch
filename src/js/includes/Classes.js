@@ -31,7 +31,7 @@ class Milchproduktion {
                 clearInterval(this.timeId);
             }
 
-            this.number+=this.upgrade;
+            this.number++;
             this.timeId=setInterval(addMilk, 200,(this.mps/5)*this.number*this.upgrade);
             this.cost*=this.costMulti;
             totalMps+=this.mps;
@@ -52,8 +52,17 @@ class Milchproduktion {
 
         }
     }
-    upgrading(multi){
-        this.upgrade*=multi;
+    upgrading(multi,costs,index){
+        if(milk>=costs){
+            this.upgrade=multi;
+            this.cost/=this.costMulti;
+            milk-=costs-this.cost;
+            this.number--;
+            this.add()
+            document.getElementsByClassName("u_productUpgrades")[index].classList.remove("u_toSell")
+            document.getElementsByClassName("u_productUpgrades")[index].classList.add("u_bought")
+
+        }
     }
     load(price,count){
         if(count>0){

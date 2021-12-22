@@ -36,7 +36,9 @@
         <div id="m_top">
             <button type="button" id="m_stats"></button>
             <button type="button" id="m_news"></button>
-            <button type="button" id="m_settings"></button>
+            <button type="button" id="m_settings" class="tooltip">
+                <span class="tooltiptext">enable/mute music</span>
+            </button>
         </div>
         <img src="../assets/img/ui_assets/menu/menu_frame_line.png" alt="Trennlinie zur Separierung" class="seperateLine">
         <div id="m_main">
@@ -98,11 +100,11 @@
                     <div class="m_achievement tooltip" id="50LeitungKlasse">
                         <span class="tooltiptext" id="50Leitung">???</span>
                     </div>
-                    <div class="m_achievement tooltip">
-                        <span class="tooltiptext">???</span>
+                    <div class="m_achievement tooltip" id="milkAchievement_100000000">
+                        <span class="tooltiptext" id="100000000Milch">???</span>
                     </div>
-                    <div class="m_achievement tooltip">
-                        <span class="tooltiptext">???</span>
+                    <div class="m_achievement tooltip" id="milkAchievement_1000000000">
+                        <span class="tooltiptext" id="1000000000Milch">???</span>
                     </div>
 
                 </div>
@@ -266,32 +268,128 @@
             <div class="u_upgradePath">
                 <h2>Milchbauer</h2>
                 <div class="u_upgrades">
-                    <span class="u_upgrade u_toSell">2x</span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">100 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">250 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">400 <span class="currency">M</span></span>
+                    </span>
                 </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Milchbaum</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">450 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">700 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">1200 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Kuhweide</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">1800 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">4000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">8000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Bauernhof</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">5000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">10000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">15000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Saugmaschine</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">10000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">18000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">22000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Milch LKW</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">18000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">25000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">30000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Milch Fabrik</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">23000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">33000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">50000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Milch Turm</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">33000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">55000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">85000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
             <div class="u_upgradePath">
                 <h2>Milch Minen</h2>
+                <div class="u_upgrades">
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">2x
+                        <span class="tooltiptext">50000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">5x
+                        <span class="tooltiptext">100000 <span class="currency">M</span></span>
+                    </span>
+                    <span class="u_upgrade u_toSell u_productUpgrades tooltip">10x
+                        <span class="tooltiptext">150000 <span class="currency">M</span></span>
+                    </span>
+                </div>
             </div>
         </div>
     </section>

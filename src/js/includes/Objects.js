@@ -5,9 +5,6 @@ let clickStrength =1;
 let saves;
 const ClickUpgrade=[2,5,10,20,40,80,125];
 
-
-
-
 bauer = new Milchproduktion(0,0.1,10,1.2,"Bauer","bauerID","ma_bauer","baumID");
 milchbaum= new Milchproduktion(0,0.5,100,1.15,"Milchbaum","baumID","ma_baum","kuhweideID");
 kuhweide= new Milchproduktion(0,1,1100,1.15,"Kuhweide","kuhweideID","ma_weide","bauernhofID");
@@ -37,6 +34,8 @@ let milkAchieve=[
     fuenftausendMilch= new Achievements(500000,"5000Milch","milkAchievement_5000","500000 Milch!"),
     zehntausendMilch= new Achievements(1000000,"10000Milch","milkAchievement_10000","1000000 Milch!"),
     fuenfzigtausendMilch= new Achievements(5000000,"50000Milch","milkAchievement_50000","5000000 Milch!"),
+    hundertMillionenMilch= new Achievements(100000000,"100000000Milch","milkAchievement_100000000","100000000 Milch!"),
+    milliardeMilch= new Achievements(1000000000,"1000000000Milch","milkAchievement_1000000000","1000000000 Milch!")
 
 ]
 
@@ -50,6 +49,7 @@ fuenfzigFabrik = new Achievements(15,"50Fabrik","50FabrikKlasse","15 Fabriken!")
 fuenfzigTurm = new Achievements(15,"50Turm","50TurmKlasse","15 Türme!");
 fuenfzigMinen = new Achievements(15,"50Minen","50MinenKlasse","15 Minen!");
 fuenfzigLeitung = new Achievements(15,"50Leitung","50LeitungKlasse","15 Leitungen!");
+
 
 
 

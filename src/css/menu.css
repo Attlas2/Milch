@@ -67,7 +67,7 @@ Menu Part
 #m_top #m_settings {
   background: url("../assets/img/ui_assets/menu/menu_button_settings.png") no-repeat center;
   background-size: contain;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 #m_main {

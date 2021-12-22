@@ -62,8 +62,8 @@ body .currency {
 }
 
 .tooltip .tooltiptext {
-  top: -1.6rem;
-  left: 1.2rem;
+  top: 2rem;
+  left: 2rem;
   visibility: hidden;
   width: auto;
   background-color: #140F0B;

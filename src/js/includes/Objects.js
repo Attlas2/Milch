@@ -34,6 +34,7 @@ let milkAchieve=[
     fuenftausendMilch= new Achievements(5000,"5000Milch","milkAchievement_5000","5000 Milch!"),
     zehntausendMilch= new Achievements(10000,"10000Milch","milkAchievement_10000","10000 Milch!"),
     fuenfzigtausendMilch= new Achievements(50000,"50000Milch","milkAchievement_50000","50000 Milch!"),
+    
 ]
 
 fuenfzigBauern = new Achievements(15,"50Bauern","50BauerKlasse","15 Bauern!");

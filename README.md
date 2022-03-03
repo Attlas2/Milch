@@ -10,6 +10,8 @@ Milchklicker is a game, where you produce Milk to grow your Milk Business. You c
 #### 0.7 
 
  - [ ] Balance Game
+ - [ ] Comment full Code
+ - [ ] Refactore Code to match JS Conventions
 
 #### 0.6
 

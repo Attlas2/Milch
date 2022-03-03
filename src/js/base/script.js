@@ -1,5 +1,6 @@
-function init(){
+async function init(){
     styleInit();
+    await loadContents();
 
 
     if (localStorage.getItem("Speicherstand")!==null) {

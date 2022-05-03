@@ -47,6 +47,7 @@ Milchklicker is a game, where you produce Milk to grow your Milk Business. You c
  - [ ] Fixing Sound not playing as default
  - [ ] Making Upgrades Menu hide Upgrades, until they are unlocked
  - [ ] Crypt Milk Variable
+ - [X] Displace Content for a better Structure
 
 ### Indev / pre-Alpha
 First Accessible Version of the Game. Included Basic Updates and Upgrades and Achievements. Music is currently not working right. Settings Menu and other Sub-Menus need to be added
